@@ -25,6 +25,11 @@ EVENTS = os.path.join(ROOT, 'events')
 TOP_FILES = ('map.html', 'map.png', 'survey.csv', 'survey.json', 'event.json', 'metrics.json', 'tasks.json')
 CAMERA_FILES = ('tile.jpg', 'motion.png')
 INPUT_FILES = ('videos.csv',)
+NOTICE = ('<div id="eqcam-notice" style="position:fixed;left:8px;bottom:24px;z-index:1000;max-width:340px;'
+          'background:rgba(255,255,255,.93);color:#222;padding:5px 8px;border-radius:4px;font:11px/1.4 sans-serif;'
+          'box-shadow:0 1px 3px rgba(0,0,0,.3)">Research prototype: automated, unverified findings; not an official '
+          'product and not for emergency decisions. Camera images belong to their owners; people are blurred. '
+          '<a href="../../about.html">About, sources and removal requests</a></div>')
 SEVERITY = {0: ('nothing notable', '#8a8f98'), 1: ('shaking effects only', '#e3b505'),
             2: ('possible damage, fire or ground failure', '#f08a24'),
             3: ('clear damage, fire or ground failure', '#d62728'), None: ('not reviewed', '#4a6fa5')}
@@ -81,9 +86,21 @@ def add_event(run, inputs=None, force=False):
             if os.path.exists(src):
                 os.makedirs(os.path.join(dest, 'cameras', cid), exist_ok=True)
                 shutil.copy2(src, os.path.join(dest, 'cameras', cid, name))
+    add_notice(os.path.join(dest, 'map.html'))
     check_no_local_paths(dest)
     print(f'added {eid} -> {os.path.relpath(dest, ROOT)}')
     return eid
+
+
+def add_notice(path):
+    """The notice (research prototype, unverified, rights and removal requests) on the map page"""
+    if not os.path.exists(path):
+        return
+    with open(path) as f:
+        page = f.read()
+    if 'id="eqcam-notice"' not in page and '</body>' in page:
+        with open(path, 'w') as f:
+            f.write(page.replace('</body>', NOTICE + '</body>', 1))
 
 
 def check_masked(run):
@@ -157,7 +174,8 @@ td.m, td.n {{ font-variant-numeric:tabular-nums; white-space:nowrap; }} td.l a {
 .id {{ font-size:12px; color:var(--muted); }}
 .b {{ display:inline-block; min-width:18px; padding:0 6px; margin:0 4px 2px 0; border-radius:9px; background:var(--c);
      color:#111; font-size:12px; text-align:center; }}
-.legend {{ font-size:12px; color:var(--muted); margin-top:16px; }} .legend .b {{ min-width:10px; height:10px; padding:0; vertical-align:middle; }}
+.legend {{ font-size:12px; color:var(--muted); margin-top:16px; }}
+footer {{ font-size:13px; color:var(--muted); margin-top:28px; padding-top:12px; border-top:1px solid var(--line); }} .legend .b {{ min-width:10px; height:10px; padding:0; vertical-align:middle; }}
 </style></head><body><main>
 <h1>Earthquake camera surveys</h1>
 <p>Public and traffic camera videos reviewed after earthquakes with <a href="https://github.com/lijun99/eqcam">eqcam</a>:
@@ -165,6 +183,10 @@ shaking, damage, fire, ground failure and outages seen by each camera. The findi
 <div class="wrap"><table><thead><tr><th>Origin</th><th>Mag.</th><th>Event</th><th>Cameras</th><th>Findings</th><th></th></tr></thead>
 <tbody>{body}</tbody></table></div>
 <div class="legend">{legend}</div>
+<footer><b>Research prototype.</b> The findings are automated and unverified; this is not an official earthquake
+product and must not be used for emergency or safety decisions. Camera images belong to their owners and are shown
+as a few low-resolution stills, with people blurred, for non-commercial research.
+<a href="about.html">About, sources and removal requests</a></footer>
 </main></body></html>
 '''
     with open(os.path.join(ROOT, 'index.html'), 'w') as f:

@@ -79,4 +79,4 @@ bases[inUS ? 'USGS Topo' : 'CARTO Light (worldwide)'].addTo(map);
 const legend = L.control({position: 'bottomright'});
 legend.onAdd = () => { const d = L.DomUtil.create('div', 'legend'); d.innerHTML = "<div><span style=\"background:#8a8f98\"></span>nothing notable</div><div><span style=\"background:#e3b505\"></span>shaking effects only</div><div><span style=\"background:#f08a24\"></span>possible damage, fire or ground failure</div><div><span style=\"background:#d62728\"></span>clear damage, fire or ground failure</div><div><span style=\"background:#4a6fa5\"></span>not reviewed</div>"; return d; };
 legend.addTo(map);
-</script></body></html>
+</script><div id="eqcam-notice" style="position:fixed;left:8px;bottom:24px;z-index:1000;max-width:340px;background:rgba(255,255,255,.93);color:#222;padding:5px 8px;border-radius:4px;font:11px/1.4 sans-serif;box-shadow:0 1px 3px rgba(0,0,0,.3)">Research prototype: automated, unverified findings; not an official product and not for emergency decisions. Camera images belong to their owners; people are blurred. <a href="../../about.html">About, sources and removal requests</a></div></body></html>

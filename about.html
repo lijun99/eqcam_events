@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About these surveys</title>
+<style>
+:root { --bg:#fff; --fg:#1d2330; --muted:#5f6878; --line:#e3e6eb; --link:#1a5fb4; --note:#fff7e0; }
+@media (prefers-color-scheme: dark) { :root { --bg:#14171c; --fg:#e6e9ee; --muted:#9aa3b2; --line:#2a2f37; --link:#8cb4ff; --note:#2b2615; } }
+body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.6 system-ui, -apple-system, Segoe UI, sans-serif; }
+main { max-width:760px; margin:0 auto; padding:32px 16px 48px; }
+h1 { font-size:24px; margin:0 0 8px; } h2 { font-size:17px; margin:28px 0 6px; }
+a { color:var(--link); } p, li { margin:6px 0; } ul { padding-left:20px; }
+.note { background:var(--note); border:1px solid var(--line); border-radius:6px; padding:10px 14px; }
+.back { font-size:14px; }
+</style></head><body><main>
+<p class="back"><a href="index.html">&larr; Events</a></p>
+<h1>About these surveys</h1>
+
+<p class="note"><b>Research prototype.</b> These pages are part of a research project on using public camera
+video to observe the effects of earthquakes. The findings are produced automatically by software and a
+vision-language model and are <b>not verified</b>. They may be wrong or incomplete. This is <b>not an official
+earthquake product</b> and must not be used for emergency, safety or other decisions. For official information,
+follow the U.S. Geological Survey, ShakeAlert, and your local emergency management agency.</p>
+
+<h2>What is shown</h2>
+<p>For each event, a map of the cameras near the epicenter, colored by what the automated review found, and per
+camera a tile of four low-resolution stills (before, during and after the shaking), a plot of the image motion,
+and a table of the measurements and findings. The maps link to video clips hosted elsewhere; those clips are not
+part of this site.</p>
+
+<h2>No affiliation</h2>
+<p>This project is not affiliated with, sponsored by or endorsed by the operators of the cameras, the
+broadcasters or websites that stream them, the U.S. Geological Survey, ShakeAlert, or any public agency. Logos,
+names and on-screen graphics that appear in the stills belong to their owners and are shown only as they appear
+in the original streams.</p>
+
+<h2>Sources and copyright</h2>
+<p>The stills come from camera streams that were publicly accessible at the time of the event. All rights to the
+images remain with their owners. They are reproduced here in small number and at low resolution, without audio,
+for non-commercial research and to document the effects of earthquakes. No images or findings on this site may be
+taken as permission to reuse the original camera content.</p>
+<p>If you own or operate a camera shown here and want its images credited differently or removed, please tell us
+(see below); we will act promptly.</p>
+
+<h2>Privacy</h2>
+<ul>
+<li>People in the stills are blurred automatically, from boxes placed by the same review that looks for damage.
+The review can miss a person, especially a small or partly hidden one.</li>
+<li>We do not try to identify anyone. The findings describe people only as counts and actions (for example,
+"people gathering").</li>
+<li>Full-resolution frames and the original stills are not published.</li>
+</ul>
+
+<h2>Removal requests and corrections</h2>
+<p>To ask for an image to be blurred further or removed, for a camera to be taken off, or to report an error,
+open an issue at <a href="https://github.com/lijun99/eqcam_events/issues">github.com/lijun99/eqcam_events/issues</a>.
+Please do not post a personal image or personal details in the issue: the camera, the event and the time are
+enough. We remove images first and review afterwards.</p>
+
+<h2>No warranty</h2>
+<p>The content is provided as is, without warranty of any kind. The authors are not liable for any use of it.</p>
+
+<h2>Software</h2>
+<p>The surveys are made with <a href="https://github.com/lijun99/eqcam">eqcam</a>.</p>
+</main></body></html>

@@ -3,7 +3,19 @@
 Rapid surveys of public and traffic camera videos after earthquakes, made with
 [eqcam](https://github.com/lijun99/eqcam), published as a static site (GitHub Pages).
 
-**The findings are automated and unverified**: look at the tiles and the videos before acting on them.
+## Disclaimer
+
+**Research prototype.** The findings are produced automatically and are not verified; this is not an official
+earthquake product and must not be used for emergency or safety decisions. It is not affiliated with or endorsed
+by the camera operators, the streaming sites, the USGS, ShakeAlert or any agency.
+
+The stills come from camera streams that were publicly accessible at the time of the event; all rights remain with
+their owners. They are published in small number, at low resolution (the 1280 x 720 tile of four frames), without
+audio, with people blurred, for non-commercial research. Full-resolution frames and videos are not stored here.
+
+Removal requests and corrections: open an issue (without personal images or details); images are removed first
+and reviewed afterwards. The full text is in [about.html](about.html), linked from the index page and from every
+event map. Provided as is, without warranty.
 
 ## Contents
 
