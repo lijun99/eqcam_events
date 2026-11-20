@@ -1,0 +1,303 @@
+{
+ "camera_id": "0003",
+ "stage": "review",
+ "reviewed_by": "claude-code",
+ "model": "claude-opus-5-5",
+ "reviewed_at": "2026-11-20T21:26:23Z",
+ "latency_s": null,
+ "usage": {},
+ "error": null,
+ "findings": {
+  "camera_status": "ok",
+  "shaking": {
+   "visible": "yes",
+   "effects": [
+    "sub-pixel camera vibration (about 0.15 px) with a sharp onset at 7.0 s video time, decaying over about 20 s; the camera's own clock suggests about 1-2 s of stream latency, so the onset matches the predicted S arrival"
+   ],
+   "intensity_mmi": "",
+   "basis": "Only the image motion; no visible swaying, falling objects or reactions."
+  },
+  "structural_damage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "infrastructure_damage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "landslide": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "ground_failure": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "fire": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "smoke_or_dust": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "power_outage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "water": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "people_response": {
+   "present": "no",
+   "description": "about 5-10 people on the sidewalks and street walking or sitting; no running or gathering during or after the shaking",
+   "where": "sidewalks, all frames"
+  },
+  "severity": 1,
+  "confidence": "high",
+  "summary": "Skid Row (8 km): weak shaking of the camera at the S arrival; no damage, lights on, people on the sidewalk continue normal activity.",
+  "people_boxes": [
+   {
+    "x_min": 0,
+    "y_min": 350,
+    "x_max": 83,
+    "y_max": 399
+   },
+   {
+    "x_min": 23,
+    "y_min": 398,
+    "x_max": 78,
+    "y_max": 447
+   },
+   {
+    "x_min": 109,
+    "y_min": 377,
+    "x_max": 141,
+    "y_max": 419
+   },
+   {
+    "x_min": 263,
+    "y_min": 264,
+    "x_max": 312,
+    "y_max": 370
+   },
+   {
+    "x_min": 322,
+    "y_min": 377,
+    "x_max": 339,
+    "y_max": 419
+   },
+   {
+    "x_min": 424,
+    "y_min": 285,
+    "x_max": 451,
+    "y_max": 301
+   },
+   {
+    "x_min": 464,
+    "y_min": 322,
+    "x_max": 497,
+    "y_max": 345
+   },
+   {
+    "x_min": 323,
+    "y_min": 266,
+    "x_max": 339,
+    "y_max": 285
+   },
+   {
+    "x_min": 329,
+    "y_min": 271,
+    "x_max": 339,
+    "y_max": 294
+   },
+   {
+    "x_min": 500,
+    "y_min": 350,
+    "x_max": 583,
+    "y_max": 399
+   },
+   {
+    "x_min": 523,
+    "y_min": 398,
+    "x_max": 578,
+    "y_max": 447
+   },
+   {
+    "x_min": 609,
+    "y_min": 377,
+    "x_max": 641,
+    "y_max": 419
+   },
+   {
+    "x_min": 763,
+    "y_min": 264,
+    "x_max": 812,
+    "y_max": 370
+   },
+   {
+    "x_min": 822,
+    "y_min": 377,
+    "x_max": 839,
+    "y_max": 419
+   },
+   {
+    "x_min": 924,
+    "y_min": 285,
+    "x_max": 951,
+    "y_max": 301
+   },
+   {
+    "x_min": 964,
+    "y_min": 322,
+    "x_max": 997,
+    "y_max": 345
+   },
+   {
+    "x_min": 823,
+    "y_min": 266,
+    "x_max": 839,
+    "y_max": 285
+   },
+   {
+    "x_min": 834,
+    "y_min": 274,
+    "x_max": 842,
+    "y_max": 297
+   },
+   {
+    "x_min": 0,
+    "y_min": 850,
+    "x_max": 83,
+    "y_max": 899
+   },
+   {
+    "x_min": 23,
+    "y_min": 898,
+    "x_max": 78,
+    "y_max": 947
+   },
+   {
+    "x_min": 109,
+    "y_min": 877,
+    "x_max": 141,
+    "y_max": 919
+   },
+   {
+    "x_min": 263,
+    "y_min": 764,
+    "x_max": 312,
+    "y_max": 870
+   },
+   {
+    "x_min": 322,
+    "y_min": 877,
+    "x_max": 339,
+    "y_max": 919
+   },
+   {
+    "x_min": 424,
+    "y_min": 785,
+    "x_max": 451,
+    "y_max": 801
+   },
+   {
+    "x_min": 464,
+    "y_min": 822,
+    "x_max": 497,
+    "y_max": 845
+   },
+   {
+    "x_min": 323,
+    "y_min": 766,
+    "x_max": 339,
+    "y_max": 785
+   },
+   {
+    "x_min": 332,
+    "y_min": 774,
+    "x_max": 339,
+    "y_max": 797
+   },
+   {
+    "x_min": 500,
+    "y_min": 850,
+    "x_max": 583,
+    "y_max": 899
+   },
+   {
+    "x_min": 523,
+    "y_min": 898,
+    "x_max": 578,
+    "y_max": 947
+   },
+   {
+    "x_min": 609,
+    "y_min": 877,
+    "x_max": 641,
+    "y_max": 919
+   },
+   {
+    "x_min": 763,
+    "y_min": 764,
+    "x_max": 812,
+    "y_max": 870
+   },
+   {
+    "x_min": 822,
+    "y_min": 877,
+    "x_max": 839,
+    "y_max": 919
+   },
+   {
+    "x_min": 924,
+    "y_min": 785,
+    "x_max": 951,
+    "y_max": 801
+   },
+   {
+    "x_min": 964,
+    "y_min": 822,
+    "x_max": 997,
+    "y_max": 845
+   },
+   {
+    "x_min": 823,
+    "y_min": 766,
+    "x_max": 839,
+    "y_max": 785
+   },
+   {
+    "x_min": 577,
+    "y_min": 840,
+    "x_max": 603,
+    "y_max": 889
+   },
+   {
+    "x_min": 837,
+    "y_min": 773,
+    "x_max": 848,
+    "y_max": 796
+   },
+   {
+    "x_min": 902,
+    "y_min": 775,
+    "x_max": 915,
+    "y_max": 801
+   }
+  ]
+ },
+ "video_window_s": [
+  3,
+  30
+ ]
+}

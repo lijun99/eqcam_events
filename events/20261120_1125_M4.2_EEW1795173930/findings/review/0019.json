@@ -1,0 +1,74 @@
+{
+ "camera_id": "0019",
+ "stage": "review",
+ "reviewed_by": "claude-code",
+ "model": "claude-opus-5-5",
+ "reviewed_at": "2026-11-20T22:09:24Z",
+ "latency_s": null,
+ "usage": {},
+ "error": null,
+ "findings": {
+  "camera_status": "ok",
+  "shaking": {
+   "visible": "yes",
+   "effects": [
+    "weak sub-pixel jitter of the whole image (about 0.3 px) from 16 s to 24.5 s video time, while nothing in the scene moves"
+   ],
+   "intensity_mmi": "",
+   "basis": "Only weak image motion; the camera tours its preset views later (pans at 39-48, 54-76 and 87-128 s), which is not shaking."
+  },
+  "structural_damage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "infrastructure_damage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "landslide": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "ground_failure": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "fire": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "smoke_or_dust": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "power_outage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "water": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "people_response": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "severity": 1,
+  "confidence": "medium",
+  "summary": "Venice boardwalk (28 km): weak shaking of the camera at 16-24 s; empty boardwalk, no damage; the later view changes are the camera touring its presets.",
+  "people_boxes": []
+ },
+ "video_window_s": [
+  10,
+  30
+ ]
+}

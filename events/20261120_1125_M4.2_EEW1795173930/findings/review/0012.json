@@ -1,0 +1,74 @@
+{
+ "camera_id": "0012",
+ "stage": "review",
+ "reviewed_by": "claude-code",
+ "model": "claude-opus-5-5",
+ "reviewed_at": "2026-11-20T21:26:23Z",
+ "latency_s": null,
+ "usage": {},
+ "error": null,
+ "findings": {
+  "camera_status": "ok",
+  "shaking": {
+   "visible": "yes",
+   "effects": [
+    "image jitter up to about 2.5 px from about 3.5 s video time, strongest around 9-10 s, decaying by about 18 s (tower-mounted camera)"
+   ],
+   "intensity_mmi": "",
+   "basis": "Only the image motion of a mast-mounted camera; no visible effects to constrain an intensity."
+  },
+  "structural_damage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "infrastructure_damage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "landslide": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "ground_failure": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "fire": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "smoke_or_dust": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "power_outage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "water": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "people_response": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "severity": 1,
+  "confidence": "medium",
+  "summary": "Mount Wilson (26 km): the tower-mounted camera shook for about 15 s; view of the LA basin unchanged, no area of city lights went dark.",
+  "people_boxes": []
+ },
+ "video_window_s": [
+  0,
+  25
+ ]
+}

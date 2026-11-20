@@ -1,0 +1,1887 @@
+{
+ "event": {
+  "event_id": "20261120_1125_M4.2_EEW1795173930",
+  "usgs_id": "ci41364111",
+  "origin_utc": "2026-11-20T11:25:35.140Z",
+  "lat": 34.0063,
+  "lon": -118.1665,
+  "depth_km": 15.45,
+  "magnitude": 4.2,
+  "place": "East Los Angeles area, CA (EEW M4.2, last update M4.0)"
+ },
+ "cameras": [
+  {
+   "camera_id": "0003",
+   "name": "SkidRow_Cam2_Weingart",
+   "lat": 34.043,
+   "lon": -118.246,
+   "view": "street in Skid Row, downtown LA",
+   "flags": [],
+   "distance_km": 8.4,
+   "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/0003_YouTube_SkidRow_Cam2_Weingart_2.4min_1080p_20261120_112535.mp4",
+   "video": "0003_YouTube_SkidRow_Cam2_Weingart_2.4min_1080p_20261120_112535.mp4",
+   "width": 1920,
+   "height": 1080,
+   "duration_s": 141.1,
+   "predicted_p_s": 2.8,
+   "predicted_s_s": 4.9,
+   "shaking_detected": true,
+   "jitter_threshold_px": 0.0425,
+   "onset_s": 6.93,
+   "peak_s": 10.07,
+   "end_s": 11.6,
+   "strong_duration_s": 4.67,
+   "shake_amplitude_px": 0.2,
+   "peak_image_velocity_px_s": 1.2,
+   "permanent_shift_px": 0.0,
+   "calm_frames_before": true,
+   "changed_fraction_after": 0.0045,
+   "changed_fraction_latest": 0.0043,
+   "frames": {
+    "before": {
+     "file": "cameras/0003/before.jpg",
+     "video_time_s": 6.47
+    },
+    "peak": {
+     "file": "cameras/0003/peak.jpg",
+     "video_time_s": 10.07
+    },
+    "after": {
+     "file": "cameras/0003/after.jpg",
+     "video_time_s": 12.6
+    },
+    "latest": {
+     "file": "cameras/0003/latest.jpg",
+     "video_time_s": 141.07
+    }
+   },
+   "tile": "cameras/0003/tile.jpg",
+   "tile_layout": {
+    "before": [
+     0,
+     0,
+     640,
+     360
+    ],
+    "peak": [
+     640,
+     0,
+     640,
+     360
+    ],
+    "after": [
+     0,
+     360,
+     640,
+     360
+    ],
+    "latest": [
+     640,
+     360,
+     640,
+     360
+    ]
+   },
+   "motion_plot": "cameras/0003/motion.png",
+   "priority": "low",
+   "motion_text": "Shaking (the whole image jittering within one view) from 6.93 s to 11.6 s in the video (4.67 s), peak at 10.07 s; image shake about 0.2 px, peak image velocity 1.2 px/s, permanent shift 0.0 px. Image changed between BEFORE and AFTER: 0.4 % of the area. Image changed between BEFORE and LATEST: 0.4 % of the area.",
+   "motion_items": [
+    "Shaking 6.9-11.6 s (5 s), up to 0.2 px"
+   ],
+   "record": {
+    "camera_id": "0003",
+    "stage": "review",
+    "reviewed_by": "claude-code",
+    "model": "claude-opus-5-5",
+    "reviewed_at": "2026-11-20T21:26:23Z",
+    "latency_s": null,
+    "usage": {},
+    "error": null,
+    "findings": {
+     "camera_status": "ok",
+     "shaking": {
+      "visible": "yes",
+      "effects": [
+       "sub-pixel camera vibration (about 0.15 px) with a sharp onset at 7.0 s video time, decaying over about 20 s; the camera's own clock suggests about 1-2 s of stream latency, so the onset matches the predicted S arrival"
+      ],
+      "intensity_mmi": "",
+      "basis": "Only the image motion; no visible swaying, falling objects or reactions."
+     },
+     "structural_damage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "infrastructure_damage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "landslide": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "ground_failure": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "fire": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "smoke_or_dust": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "power_outage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "water": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "people_response": {
+      "present": "no",
+      "description": "about 5-10 people on the sidewalks and street walking or sitting; no running or gathering during or after the shaking",
+      "where": "sidewalks, all frames"
+     },
+     "severity": 1,
+     "confidence": "high",
+     "summary": "Skid Row (8 km): weak shaking of the camera at the S arrival; no damage, lights on, people on the sidewalk continue normal activity.",
+     "people_boxes": [
+      {
+       "x_min": 0,
+       "y_min": 350,
+       "x_max": 83,
+       "y_max": 399
+      },
+      {
+       "x_min": 23,
+       "y_min": 398,
+       "x_max": 78,
+       "y_max": 447
+      },
+      {
+       "x_min": 109,
+       "y_min": 377,
+       "x_max": 141,
+       "y_max": 419
+      },
+      {
+       "x_min": 263,
+       "y_min": 264,
+       "x_max": 312,
+       "y_max": 370
+      },
+      {
+       "x_min": 322,
+       "y_min": 377,
+       "x_max": 339,
+       "y_max": 419
+      },
+      {
+       "x_min": 424,
+       "y_min": 285,
+       "x_max": 451,
+       "y_max": 301
+      },
+      {
+       "x_min": 464,
+       "y_min": 322,
+       "x_max": 497,
+       "y_max": 345
+      },
+      {
+       "x_min": 323,
+       "y_min": 266,
+       "x_max": 339,
+       "y_max": 285
+      },
+      {
+       "x_min": 329,
+       "y_min": 271,
+       "x_max": 339,
+       "y_max": 294
+      },
+      {
+       "x_min": 500,
+       "y_min": 350,
+       "x_max": 583,
+       "y_max": 399
+      },
+      {
+       "x_min": 523,
+       "y_min": 398,
+       "x_max": 578,
+       "y_max": 447
+      },
+      {
+       "x_min": 609,
+       "y_min": 377,
+       "x_max": 641,
+       "y_max": 419
+      },
+      {
+       "x_min": 763,
+       "y_min": 264,
+       "x_max": 812,
+       "y_max": 370
+      },
+      {
+       "x_min": 822,
+       "y_min": 377,
+       "x_max": 839,
+       "y_max": 419
+      },
+      {
+       "x_min": 924,
+       "y_min": 285,
+       "x_max": 951,
+       "y_max": 301
+      },
+      {
+       "x_min": 964,
+       "y_min": 322,
+       "x_max": 997,
+       "y_max": 345
+      },
+      {
+       "x_min": 823,
+       "y_min": 266,
+       "x_max": 839,
+       "y_max": 285
+      },
+      {
+       "x_min": 834,
+       "y_min": 274,
+       "x_max": 842,
+       "y_max": 297
+      },
+      {
+       "x_min": 0,
+       "y_min": 850,
+       "x_max": 83,
+       "y_max": 899
+      },
+      {
+       "x_min": 23,
+       "y_min": 898,
+       "x_max": 78,
+       "y_max": 947
+      },
+      {
+       "x_min": 109,
+       "y_min": 877,
+       "x_max": 141,
+       "y_max": 919
+      },
+      {
+       "x_min": 263,
+       "y_min": 764,
+       "x_max": 312,
+       "y_max": 870
+      },
+      {
+       "x_min": 322,
+       "y_min": 877,
+       "x_max": 339,
+       "y_max": 919
+      },
+      {
+       "x_min": 424,
+       "y_min": 785,
+       "x_max": 451,
+       "y_max": 801
+      },
+      {
+       "x_min": 464,
+       "y_min": 822,
+       "x_max": 497,
+       "y_max": 845
+      },
+      {
+       "x_min": 323,
+       "y_min": 766,
+       "x_max": 339,
+       "y_max": 785
+      },
+      {
+       "x_min": 332,
+       "y_min": 774,
+       "x_max": 339,
+       "y_max": 797
+      },
+      {
+       "x_min": 500,
+       "y_min": 850,
+       "x_max": 583,
+       "y_max": 899
+      },
+      {
+       "x_min": 523,
+       "y_min": 898,
+       "x_max": 578,
+       "y_max": 947
+      },
+      {
+       "x_min": 609,
+       "y_min": 877,
+       "x_max": 641,
+       "y_max": 919
+      },
+      {
+       "x_min": 763,
+       "y_min": 764,
+       "x_max": 812,
+       "y_max": 870
+      },
+      {
+       "x_min": 822,
+       "y_min": 877,
+       "x_max": 839,
+       "y_max": 919
+      },
+      {
+       "x_min": 924,
+       "y_min": 785,
+       "x_max": 951,
+       "y_max": 801
+      },
+      {
+       "x_min": 964,
+       "y_min": 822,
+       "x_max": 997,
+       "y_max": 845
+      },
+      {
+       "x_min": 823,
+       "y_min": 766,
+       "x_max": 839,
+       "y_max": 785
+      },
+      {
+       "x_min": 577,
+       "y_min": 840,
+       "x_max": 603,
+       "y_max": 889
+      },
+      {
+       "x_min": 837,
+       "y_min": 773,
+       "x_max": 848,
+       "y_max": 796
+      },
+      {
+       "x_min": 902,
+       "y_min": 775,
+       "x_max": 915,
+       "y_max": 801
+      }
+     ]
+    },
+    "video_window_s": [
+     3,
+     30
+    ]
+   },
+   "findings": {
+    "camera_status": "ok",
+    "shaking": {
+     "visible": "yes",
+     "effects": [
+      "sub-pixel camera vibration (about 0.15 px) with a sharp onset at 7.0 s video time, decaying over about 20 s; the camera's own clock suggests about 1-2 s of stream latency, so the onset matches the predicted S arrival"
+     ],
+     "intensity_mmi": "",
+     "basis": "Only the image motion; no visible swaying, falling objects or reactions."
+    },
+    "structural_damage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "infrastructure_damage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "landslide": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "ground_failure": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "fire": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "smoke_or_dust": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "power_outage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "water": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "people_response": {
+     "present": "no",
+     "description": "about 5-10 people on the sidewalks and street walking or sitting; no running or gathering during or after the shaking",
+     "where": "sidewalks, all frames"
+    },
+    "severity": 1,
+    "confidence": "high",
+    "summary": "Skid Row (8 km): weak shaking of the camera at the S arrival; no damage, lights on, people on the sidewalk continue normal activity.",
+    "people_boxes": [
+     {
+      "x_min": 0,
+      "y_min": 350,
+      "x_max": 83,
+      "y_max": 399
+     },
+     {
+      "x_min": 23,
+      "y_min": 398,
+      "x_max": 78,
+      "y_max": 447
+     },
+     {
+      "x_min": 109,
+      "y_min": 377,
+      "x_max": 141,
+      "y_max": 419
+     },
+     {
+      "x_min": 263,
+      "y_min": 264,
+      "x_max": 312,
+      "y_max": 370
+     },
+     {
+      "x_min": 322,
+      "y_min": 377,
+      "x_max": 339,
+      "y_max": 419
+     },
+     {
+      "x_min": 424,
+      "y_min": 285,
+      "x_max": 451,
+      "y_max": 301
+     },
+     {
+      "x_min": 464,
+      "y_min": 322,
+      "x_max": 497,
+      "y_max": 345
+     },
+     {
+      "x_min": 323,
+      "y_min": 266,
+      "x_max": 339,
+      "y_max": 285
+     },
+     {
+      "x_min": 329,
+      "y_min": 271,
+      "x_max": 339,
+      "y_max": 294
+     },
+     {
+      "x_min": 500,
+      "y_min": 350,
+      "x_max": 583,
+      "y_max": 399
+     },
+     {
+      "x_min": 523,
+      "y_min": 398,
+      "x_max": 578,
+      "y_max": 447
+     },
+     {
+      "x_min": 609,
+      "y_min": 377,
+      "x_max": 641,
+      "y_max": 419
+     },
+     {
+      "x_min": 763,
+      "y_min": 264,
+      "x_max": 812,
+      "y_max": 370
+     },
+     {
+      "x_min": 822,
+      "y_min": 377,
+      "x_max": 839,
+      "y_max": 419
+     },
+     {
+      "x_min": 924,
+      "y_min": 285,
+      "x_max": 951,
+      "y_max": 301
+     },
+     {
+      "x_min": 964,
+      "y_min": 322,
+      "x_max": 997,
+      "y_max": 345
+     },
+     {
+      "x_min": 823,
+      "y_min": 266,
+      "x_max": 839,
+      "y_max": 285
+     },
+     {
+      "x_min": 834,
+      "y_min": 274,
+      "x_max": 842,
+      "y_max": 297
+     },
+     {
+      "x_min": 0,
+      "y_min": 850,
+      "x_max": 83,
+      "y_max": 899
+     },
+     {
+      "x_min": 23,
+      "y_min": 898,
+      "x_max": 78,
+      "y_max": 947
+     },
+     {
+      "x_min": 109,
+      "y_min": 877,
+      "x_max": 141,
+      "y_max": 919
+     },
+     {
+      "x_min": 263,
+      "y_min": 764,
+      "x_max": 312,
+      "y_max": 870
+     },
+     {
+      "x_min": 322,
+      "y_min": 877,
+      "x_max": 339,
+      "y_max": 919
+     },
+     {
+      "x_min": 424,
+      "y_min": 785,
+      "x_max": 451,
+      "y_max": 801
+     },
+     {
+      "x_min": 464,
+      "y_min": 822,
+      "x_max": 497,
+      "y_max": 845
+     },
+     {
+      "x_min": 323,
+      "y_min": 766,
+      "x_max": 339,
+      "y_max": 785
+     },
+     {
+      "x_min": 332,
+      "y_min": 774,
+      "x_max": 339,
+      "y_max": 797
+     },
+     {
+      "x_min": 500,
+      "y_min": 850,
+      "x_max": 583,
+      "y_max": 899
+     },
+     {
+      "x_min": 523,
+      "y_min": 898,
+      "x_max": 578,
+      "y_max": 947
+     },
+     {
+      "x_min": 609,
+      "y_min": 877,
+      "x_max": 641,
+      "y_max": 919
+     },
+     {
+      "x_min": 763,
+      "y_min": 764,
+      "x_max": 812,
+      "y_max": 870
+     },
+     {
+      "x_min": 822,
+      "y_min": 877,
+      "x_max": 839,
+      "y_max": 919
+     },
+     {
+      "x_min": 924,
+      "y_min": 785,
+      "x_max": 951,
+      "y_max": 801
+     },
+     {
+      "x_min": 964,
+      "y_min": 822,
+      "x_max": 997,
+      "y_max": 845
+     },
+     {
+      "x_min": 823,
+      "y_min": 766,
+      "x_max": 839,
+      "y_max": 785
+     },
+     {
+      "x_min": 577,
+      "y_min": 840,
+      "x_max": 603,
+      "y_max": 889
+     },
+     {
+      "x_min": 837,
+      "y_min": 773,
+      "x_max": 848,
+      "y_max": 796
+     },
+     {
+      "x_min": 902,
+      "y_min": 775,
+      "x_max": 915,
+      "y_max": 801
+     }
+    ]
+   },
+   "severity": 1,
+   "people_blurred": 38
+  },
+  {
+   "camera_id": "0006",
+   "name": "Hollywood_Blvd_LATimes",
+   "lat": 34.1016,
+   "lon": -118.3387,
+   "view": "Hollywood Blvd from above, storefronts and billboards",
+   "flags": [
+    "view_changes (5)",
+    "scene_changed"
+   ],
+   "distance_km": 19.1,
+   "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/0006_YouTube_Hollywood_Blvd_LATimes_2.3min_1080p_20261120_112533.mp4",
+   "video": "0006_YouTube_Hollywood_Blvd_LATimes_2.3min_1080p_20261120_112533.mp4",
+   "width": 1920,
+   "height": 1080,
+   "duration_s": 140.1,
+   "predicted_p_s": 5.7,
+   "predicted_s_s": 8.7,
+   "shaking_detected": false,
+   "jitter_threshold_px": 0.285,
+   "view_changes_s": [
+    [
+     15.0,
+     20.9
+    ],
+    [
+     51.1,
+     57.9
+    ],
+    [
+     68.9,
+     105.9
+    ],
+    [
+     110.0,
+     112.1
+    ],
+    [
+     123.1,
+     124.9
+    ]
+   ],
+   "changed_fraction_latest": 0.0456,
+   "frames": {
+    "before": {
+     "file": "cameras/0006/before.jpg",
+     "video_time_s": 3.67
+    },
+    "latest": {
+     "file": "cameras/0006/latest.jpg",
+     "video_time_s": 140.07
+    }
+   },
+   "tile": "cameras/0006/tile.jpg",
+   "tile_layout": {
+    "before": [
+     0,
+     0,
+     640,
+     360
+    ],
+    "latest": [
+     640,
+     360,
+     640,
+     360
+    ]
+   },
+   "motion_plot": "cameras/0006/motion.png",
+   "priority": "high",
+   "motion_text": "The view changes 5 times (the camera pans, zooms or switches views; this is not shaking): 15.0-20.9 s, 51.1-57.9 s, 68.9-105.9 s, 110.0-112.1 s, 123.1-124.9 s. No shaking detected in the video. Image changed between BEFORE and LATEST: 4.6 % of the area. LATEST is the last frame in the same view as BEFORE (140.07 s). Flags: scene_changed.",
+   "motion_items": [
+    "No shaking detected",
+    "Camera pans or switches views 5 times (not shaking)",
+    "Scene changed: 5 % of the image"
+   ],
+   "record": {
+    "camera_id": "0006",
+    "stage": "review",
+    "reviewed_by": "claude-code",
+    "model": "claude-opus-5-5",
+    "reviewed_at": "2026-11-20T22:09:24Z",
+    "latency_s": null,
+    "usage": {},
+    "error": null,
+    "findings": {
+     "camera_status": "ok",
+     "shaking": {
+      "visible": "no",
+      "effects": [],
+      "intensity_mmi": "",
+      "basis": "No image motion above 0.1 px before the camera starts to move at 15 s; the camera then pans/zooms (operator or preset), which is not shaking."
+     },
+     "structural_damage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "infrastructure_damage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "landslide": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "ground_failure": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "fire": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "smoke_or_dust": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "power_outage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "water": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "people_response": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "severity": 0,
+     "confidence": "medium",
+     "summary": "Hollywood Blvd (19 km): no visible shaking; the camera tours its presets from 15 s and returns to the first view; street, signs and lights unchanged.",
+     "people_boxes": [
+      {
+       "x_min": 287,
+       "y_min": 260,
+       "x_max": 344,
+       "y_max": 351
+      },
+      {
+       "x_min": 221,
+       "y_min": 199,
+       "x_max": 260,
+       "y_max": 260
+      },
+      {
+       "x_min": 787,
+       "y_min": 740,
+       "x_max": 852,
+       "y_max": 851
+      },
+      {
+       "x_min": 730,
+       "y_min": 701,
+       "x_max": 754,
+       "y_max": 747
+      }
+     ]
+    },
+    "video_window_s": [
+     3,
+     20
+    ]
+   },
+   "findings": {
+    "camera_status": "ok",
+    "shaking": {
+     "visible": "no",
+     "effects": [],
+     "intensity_mmi": "",
+     "basis": "No image motion above 0.1 px before the camera starts to move at 15 s; the camera then pans/zooms (operator or preset), which is not shaking."
+    },
+    "structural_damage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "infrastructure_damage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "landslide": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "ground_failure": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "fire": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "smoke_or_dust": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "power_outage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "water": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "people_response": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "severity": 0,
+    "confidence": "medium",
+    "summary": "Hollywood Blvd (19 km): no visible shaking; the camera tours its presets from 15 s and returns to the first view; street, signs and lights unchanged.",
+    "people_boxes": [
+     {
+      "x_min": 287,
+      "y_min": 260,
+      "x_max": 344,
+      "y_max": 351
+     },
+     {
+      "x_min": 221,
+      "y_min": 199,
+      "x_max": 260,
+      "y_max": 260
+     },
+     {
+      "x_min": 787,
+      "y_min": 740,
+      "x_max": 852,
+      "y_max": 851
+     },
+     {
+      "x_min": 730,
+      "y_min": 701,
+      "x_max": 754,
+      "y_max": 747
+     }
+    ]
+   },
+   "severity": 0,
+   "people_blurred": 4
+  },
+  {
+   "camera_id": "0009",
+   "name": "LAX_Runways_24",
+   "lat": 33.95,
+   "lon": -118.4,
+   "view": "LAX runways 24",
+   "flags": [
+    "view_changes (7)",
+    "no_calm_frames_before_the_shaking",
+    "shaking_until_a_view_change",
+    "latest_in_another_view",
+    "scene_changed"
+   ],
+   "distance_km": 22.4,
+   "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/0009_YouTube_LAX_Runways_24_2.3min_1080p_20261120_112535.mp4",
+   "video": "0009_YouTube_LAX_Runways_24_2.3min_1080p_20261120_112535.mp4",
+   "width": 1920,
+   "height": 1080,
+   "duration_s": 140.1,
+   "predicted_p_s": 4.5,
+   "predicted_s_s": 7.7,
+   "shaking_detected": true,
+   "jitter_threshold_px": 0.0609,
+   "view_changes_s": [
+    [
+     5.5,
+     6.8
+    ],
+    [
+     25.5,
+     26.9
+    ],
+    [
+     45.6,
+     46.9
+    ],
+    [
+     65.7,
+     67.1
+    ],
+    [
+     85.7,
+     87.0
+    ],
+    [
+     105.7,
+     107.0
+    ],
+    [
+     125.8,
+     127.1
+    ]
+   ],
+   "onset_s": 7.0,
+   "peak_s": 14.2,
+   "end_s": 25.4,
+   "strong_duration_s": 18.4,
+   "shake_amplitude_px": 6.0,
+   "peak_image_velocity_px_s": 58.8,
+   "permanent_shift_px": 0.1,
+   "calm_frames_before": false,
+   "changed_fraction_after": 0.0418,
+   "frames": {
+    "before": {
+     "file": "cameras/0009/before.jpg",
+     "video_time_s": 6.87
+    },
+    "peak": {
+     "file": "cameras/0009/peak.jpg",
+     "video_time_s": 14.2
+    },
+    "after": {
+     "file": "cameras/0009/after.jpg",
+     "video_time_s": 25.47
+    },
+    "latest": {
+     "file": "cameras/0009/latest.jpg",
+     "video_time_s": 140.07
+    }
+   },
+   "tile": "cameras/0009/tile.jpg",
+   "tile_layout": {
+    "before": [
+     0,
+     0,
+     640,
+     360
+    ],
+    "peak": [
+     640,
+     0,
+     640,
+     360
+    ],
+    "after": [
+     0,
+     360,
+     640,
+     360
+    ],
+    "latest": [
+     640,
+     360,
+     640,
+     360
+    ]
+   },
+   "motion_plot": "cameras/0009/motion.png",
+   "priority": "high",
+   "motion_text": "The view changes 7 times (the camera pans, zooms or switches views; this is not shaking): 5.5-6.8 s, 25.5-26.9 s, 45.6-46.9 s, 65.7-67.1 s, 85.7-87.0 s, 105.7-107.0 s, 125.8-127.1 s. Shaking (the whole image jittering within one view) from 7.0 s to 25.4 s in the video (18.4 s), peak at 14.2 s; image shake about 6.0 px, peak image velocity 58.8 px/s, permanent shift 0.1 px. Image changed between BEFORE and AFTER: 4.2 % of the area. LATEST shows another view than BEFORE: do not compare them for changes. Flags: no_calm_frames_before_the_shaking, shaking_until_a_view_change, latest_in_another_view, scene_changed.",
+   "motion_items": [
+    "Shaking 7.0-25.4 s (18 s), up to 6 px",
+    "Shaking lasts until the view changes",
+    "Camera pans or switches views 7 times (not shaking)",
+    "Scene changed: 4 % of the image",
+    "Latest frame shows another view"
+   ],
+   "record": {
+    "camera_id": "0009",
+    "stage": "review",
+    "reviewed_by": "claude-code",
+    "model": "claude-opus-5-5",
+    "reviewed_at": "2026-11-20T22:09:24Z",
+    "latency_s": null,
+    "usage": {},
+    "error": null,
+    "findings": {
+     "camera_status": "ok",
+     "shaking": {
+      "visible": "yes",
+      "effects": [
+       "the zoomed camera on parked aircraft jitters up to about 6 px from 7 s to 25 s video time (all in one view, until the stream switches views at 25.5 s)"
+      ],
+      "intensity_mmi": "",
+      "basis": "Only the image motion of the camera; no swaying objects, falling objects or people to constrain an intensity."
+     },
+     "structural_damage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "infrastructure_damage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "landslide": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "ground_failure": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "fire": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "smoke_or_dust": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "power_outage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "water": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "people_response": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "severity": 1,
+     "confidence": "high",
+     "summary": "LAX (22 km): the camera clearly shakes for about 18 s in its view of parked aircraft; the stream tours several views every ~20 s; airport lights and operations look normal.",
+     "people_boxes": [
+      {
+       "x_min": 529,
+       "y_min": 44,
+       "x_max": 648,
+       "y_max": 144
+      }
+     ]
+    },
+    "video_window_s": [
+     6,
+     26
+    ]
+   },
+   "findings": {
+    "camera_status": "ok",
+    "shaking": {
+     "visible": "yes",
+     "effects": [
+      "the zoomed camera on parked aircraft jitters up to about 6 px from 7 s to 25 s video time (all in one view, until the stream switches views at 25.5 s)"
+     ],
+     "intensity_mmi": "",
+     "basis": "Only the image motion of the camera; no swaying objects, falling objects or people to constrain an intensity."
+    },
+    "structural_damage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "infrastructure_damage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "landslide": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "ground_failure": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "fire": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "smoke_or_dust": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "power_outage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "water": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "people_response": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "severity": 1,
+    "confidence": "high",
+    "summary": "LAX (22 km): the camera clearly shakes for about 18 s in its view of parked aircraft; the stream tours several views every ~20 s; airport lights and operations look normal.",
+    "people_boxes": [
+     {
+      "x_min": 529,
+      "y_min": 44,
+      "x_max": 648,
+      "y_max": 144
+     }
+    ]
+   },
+   "severity": 1,
+   "people_blurred": 1
+  },
+  {
+   "camera_id": "0012",
+   "name": "Mount_Wilson",
+   "lat": 34.224,
+   "lon": -118.057,
+   "view": "view from Mount Wilson",
+   "flags": [],
+   "distance_km": 26.2,
+   "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/0012_WetMet_Mount_Wilson_2.2min_720p_20261120_112538.mp4",
+   "video": "0012_WetMet_Mount_Wilson_2.2min_720p_20261120_112538.mp4",
+   "width": 1280,
+   "height": 720,
+   "duration_s": 131.07,
+   "predicted_p_s": 1.9,
+   "predicted_s_s": 5.5,
+   "shaking_detected": true,
+   "jitter_threshold_px": 0.0302,
+   "onset_s": 3.4,
+   "peak_s": 8.93,
+   "end_s": 19.67,
+   "strong_duration_s": 16.27,
+   "shake_amplitude_px": 2.3,
+   "peak_image_velocity_px_s": 19.0,
+   "permanent_shift_px": 0.2,
+   "calm_frames_before": true,
+   "changed_fraction_after": 0.0,
+   "changed_fraction_latest": 0.0001,
+   "frames": {
+    "before": {
+     "file": "cameras/0012/before.jpg",
+     "video_time_s": 2.93
+    },
+    "peak": {
+     "file": "cameras/0012/peak.jpg",
+     "video_time_s": 8.93
+    },
+    "after": {
+     "file": "cameras/0012/after.jpg",
+     "video_time_s": 20.67
+    },
+    "latest": {
+     "file": "cameras/0012/latest.jpg",
+     "video_time_s": 131.0
+    }
+   },
+   "tile": "cameras/0012/tile.jpg",
+   "tile_layout": {
+    "before": [
+     0,
+     0,
+     640,
+     360
+    ],
+    "peak": [
+     640,
+     0,
+     640,
+     360
+    ],
+    "after": [
+     0,
+     360,
+     640,
+     360
+    ],
+    "latest": [
+     640,
+     360,
+     640,
+     360
+    ]
+   },
+   "motion_plot": "cameras/0012/motion.png",
+   "priority": "normal",
+   "motion_text": "Shaking (the whole image jittering within one view) from 3.4 s to 19.67 s in the video (16.27 s), peak at 8.93 s; image shake about 2.3 px, peak image velocity 19.0 px/s, permanent shift 0.2 px. Image changed between BEFORE and AFTER: 0.0 % of the area. Image changed between BEFORE and LATEST: 0.0 % of the area.",
+   "motion_items": [
+    "Shaking 3.4-19.7 s (16 s), up to 2.3 px"
+   ],
+   "record": {
+    "camera_id": "0012",
+    "stage": "review",
+    "reviewed_by": "claude-code",
+    "model": "claude-opus-5-5",
+    "reviewed_at": "2026-11-20T21:26:23Z",
+    "latency_s": null,
+    "usage": {},
+    "error": null,
+    "findings": {
+     "camera_status": "ok",
+     "shaking": {
+      "visible": "yes",
+      "effects": [
+       "image jitter up to about 2.5 px from about 3.5 s video time, strongest around 9-10 s, decaying by about 18 s (tower-mounted camera)"
+      ],
+      "intensity_mmi": "",
+      "basis": "Only the image motion of a mast-mounted camera; no visible effects to constrain an intensity."
+     },
+     "structural_damage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "infrastructure_damage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "landslide": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "ground_failure": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "fire": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "smoke_or_dust": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "power_outage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "water": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "people_response": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "severity": 1,
+     "confidence": "medium",
+     "summary": "Mount Wilson (26 km): the tower-mounted camera shook for about 15 s; view of the LA basin unchanged, no area of city lights went dark.",
+     "people_boxes": []
+    },
+    "video_window_s": [
+     0,
+     25
+    ]
+   },
+   "findings": {
+    "camera_status": "ok",
+    "shaking": {
+     "visible": "yes",
+     "effects": [
+      "image jitter up to about 2.5 px from about 3.5 s video time, strongest around 9-10 s, decaying by about 18 s (tower-mounted camera)"
+     ],
+     "intensity_mmi": "",
+     "basis": "Only the image motion of a mast-mounted camera; no visible effects to constrain an intensity."
+    },
+    "structural_damage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "infrastructure_damage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "landslide": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "ground_failure": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "fire": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "smoke_or_dust": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "power_outage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "water": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "people_response": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "severity": 1,
+    "confidence": "medium",
+    "summary": "Mount Wilson (26 km): the tower-mounted camera shook for about 15 s; view of the LA basin unchanged, no area of city lights went dark.",
+    "people_boxes": []
+   },
+   "severity": 1,
+   "people_blurred": 0
+  },
+  {
+   "camera_id": "0019",
+   "name": "Venice_Vive_Boardwalk",
+   "lat": 33.987,
+   "lon": -118.473,
+   "view": "Venice boardwalk",
+   "flags": [
+    "view_changes (5)"
+   ],
+   "distance_km": 28.3,
+   "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/0019_YouTube_Venice_Vive_Boardwalk_2.4min_1080p_20261120_112531.mp4",
+   "video": "0019_YouTube_Venice_Vive_Boardwalk_2.4min_1080p_20261120_112531.mp4",
+   "width": 1920,
+   "height": 1080,
+   "duration_s": 145.01,
+   "predicted_p_s": 9.3,
+   "predicted_s_s": 13.1,
+   "shaking_detected": true,
+   "jitter_threshold_px": 0.03,
+   "view_changes_s": [
+    [
+     39.1,
+     47.6
+    ],
+    [
+     54.0,
+     56.7
+    ],
+    [
+     59.4,
+     70.3
+    ],
+    [
+     71.2,
+     75.8
+    ],
+    [
+     87.5,
+     128.3
+    ]
+   ],
+   "onset_s": 16.33,
+   "peak_s": 22.13,
+   "end_s": 24.53,
+   "strong_duration_s": 8.2,
+   "shake_amplitude_px": 0.3,
+   "peak_image_velocity_px_s": 1.8,
+   "permanent_shift_px": 0.0,
+   "calm_frames_before": true,
+   "changed_fraction_after": 0.001,
+   "changed_fraction_latest": 0.0,
+   "frames": {
+    "before": {
+     "file": "cameras/0019/before.jpg",
+     "video_time_s": 15.87
+    },
+    "peak": {
+     "file": "cameras/0019/peak.jpg",
+     "video_time_s": 22.13
+    },
+    "after": {
+     "file": "cameras/0019/after.jpg",
+     "video_time_s": 25.53
+    },
+    "latest": {
+     "file": "cameras/0019/latest.jpg",
+     "video_time_s": 39.07
+    }
+   },
+   "tile": "cameras/0019/tile.jpg",
+   "tile_layout": {
+    "before": [
+     0,
+     0,
+     640,
+     360
+    ],
+    "peak": [
+     640,
+     0,
+     640,
+     360
+    ],
+    "after": [
+     0,
+     360,
+     640,
+     360
+    ],
+    "latest": [
+     640,
+     360,
+     640,
+     360
+    ]
+   },
+   "motion_plot": "cameras/0019/motion.png",
+   "priority": "low",
+   "motion_text": "The view changes 5 times (the camera pans, zooms or switches views; this is not shaking): 39.1-47.6 s, 54.0-56.7 s, 59.4-70.3 s, 71.2-75.8 s, 87.5-128.3 s. Shaking (the whole image jittering within one view) from 16.33 s to 24.53 s in the video (8.2 s), peak at 22.13 s; image shake about 0.3 px, peak image velocity 1.8 px/s, permanent shift 0.0 px. Image changed between BEFORE and AFTER: 0.1 % of the area. Image changed between BEFORE and LATEST: 0.0 % of the area. LATEST is the last frame in the same view as BEFORE (39.07 s).",
+   "motion_items": [
+    "Shaking 16.3-24.5 s (8 s), up to 0.3 px",
+    "Camera pans or switches views 5 times (not shaking)"
+   ],
+   "record": {
+    "camera_id": "0019",
+    "stage": "review",
+    "reviewed_by": "claude-code",
+    "model": "claude-opus-5-5",
+    "reviewed_at": "2026-11-20T22:09:24Z",
+    "latency_s": null,
+    "usage": {},
+    "error": null,
+    "findings": {
+     "camera_status": "ok",
+     "shaking": {
+      "visible": "yes",
+      "effects": [
+       "weak sub-pixel jitter of the whole image (about 0.3 px) from 16 s to 24.5 s video time, while nothing in the scene moves"
+      ],
+      "intensity_mmi": "",
+      "basis": "Only weak image motion; the camera tours its preset views later (pans at 39-48, 54-76 and 87-128 s), which is not shaking."
+     },
+     "structural_damage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "infrastructure_damage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "landslide": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "ground_failure": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "fire": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "smoke_or_dust": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "power_outage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "water": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "people_response": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "severity": 1,
+     "confidence": "medium",
+     "summary": "Venice boardwalk (28 km): weak shaking of the camera at 16-24 s; empty boardwalk, no damage; the later view changes are the camera touring its presets.",
+     "people_boxes": []
+    },
+    "video_window_s": [
+     10,
+     30
+    ]
+   },
+   "findings": {
+    "camera_status": "ok",
+    "shaking": {
+     "visible": "yes",
+     "effects": [
+      "weak sub-pixel jitter of the whole image (about 0.3 px) from 16 s to 24.5 s video time, while nothing in the scene moves"
+     ],
+     "intensity_mmi": "",
+     "basis": "Only weak image motion; the camera tours its preset views later (pans at 39-48, 54-76 and 87-128 s), which is not shaking."
+    },
+    "structural_damage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "infrastructure_damage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "landslide": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "ground_failure": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "fire": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "smoke_or_dust": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "power_outage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "water": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "people_response": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "severity": 1,
+    "confidence": "medium",
+    "summary": "Venice boardwalk (28 km): weak shaking of the camera at 16-24 s; empty boardwalk, no damage; the later view changes are the camera touring its presets.",
+    "people_boxes": []
+   },
+   "severity": 1,
+   "people_blurred": 0
+  },
+  {
+   "camera_id": "1004",
+   "name": "Caltrans_D7_I10_Fremont_Ave",
+   "lat": 34.0689,
+   "lon": -118.151,
+   "view": "I-10 freeway at Fremont Ave",
+   "flags": [
+    "scene_changed"
+   ],
+   "distance_km": 7.1,
+   "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/1004_Caltrans_D7_I10_Fremont_Ave_2.3min_432p_20261120_112533.mp4",
+   "video": "1004_Caltrans_D7_I10_Fremont_Ave_2.3min_432p_20261120_112533.mp4",
+   "width": 768,
+   "height": 432,
+   "duration_s": 140.93,
+   "predicted_p_s": 4.5,
+   "predicted_s_s": 6.5,
+   "shaking_detected": true,
+   "jitter_threshold_px": 0.3377,
+   "onset_s": 9.0,
+   "peak_s": 10.0,
+   "end_s": 15.73,
+   "strong_duration_s": 6.73,
+   "shake_amplitude_px": 1.0,
+   "peak_image_velocity_px_s": 4.3,
+   "permanent_shift_px": 0.0,
+   "calm_frames_before": true,
+   "changed_fraction_after": 0.0453,
+   "changed_fraction_latest": 0.0471,
+   "frames": {
+    "before": {
+     "file": "cameras/1004/before.jpg",
+     "video_time_s": 8.53
+    },
+    "peak": {
+     "file": "cameras/1004/peak.jpg",
+     "video_time_s": 10.0
+    },
+    "after": {
+     "file": "cameras/1004/after.jpg",
+     "video_time_s": 16.73
+    },
+    "latest": {
+     "file": "cameras/1004/latest.jpg",
+     "video_time_s": 140.93
+    }
+   },
+   "tile": "cameras/1004/tile.jpg",
+   "tile_layout": {
+    "before": [
+     0,
+     0,
+     640,
+     360
+    ],
+    "peak": [
+     640,
+     0,
+     640,
+     360
+    ],
+    "after": [
+     0,
+     360,
+     640,
+     360
+    ],
+    "latest": [
+     640,
+     360,
+     640,
+     360
+    ]
+   },
+   "motion_plot": "cameras/1004/motion.png",
+   "priority": "high",
+   "motion_text": "Shaking (the whole image jittering within one view) from 9.0 s to 15.73 s in the video (6.73 s), peak at 10.0 s; image shake about 1.0 px, peak image velocity 4.3 px/s, permanent shift 0.0 px. Image changed between BEFORE and AFTER: 4.5 % of the area. Image changed between BEFORE and LATEST: 4.7 % of the area. Flags: scene_changed.",
+   "motion_items": [
+    "Shaking 9.0-15.7 s (7 s), up to 1 px",
+    "Scene changed: 5 % of the image"
+   ],
+   "record": {
+    "camera_id": "1004",
+    "stage": "review",
+    "reviewed_by": "claude-code",
+    "model": "claude-opus-5-5",
+    "reviewed_at": "2026-11-20T21:26:23Z",
+    "latency_s": null,
+    "usage": {},
+    "error": null,
+    "findings": {
+     "camera_status": "ok",
+     "shaking": {
+      "visible": "yes",
+      "effects": [
+       "camera image vibrates from 9.2 s video time (about 2.7 s after the predicted S, consistent with stream latency), up to about 1.5 px, decaying over about 20 s"
+      ],
+      "intensity_mmi": "",
+      "basis": "Only the image motion of the pole-mounted camera; no swaying objects or other visible effects to constrain an intensity."
+     },
+     "structural_damage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "infrastructure_damage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "landslide": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "ground_failure": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "fire": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "smoke_or_dust": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "power_outage": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "water": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "people_response": {
+      "present": "no",
+      "description": "",
+      "where": ""
+     },
+     "severity": 1,
+     "confidence": "high",
+     "summary": "Closest camera (7 km): clear shaking of the camera from about 9 s, no damage; freeway traffic keeps flowing and lights stay on.",
+     "people_boxes": []
+    },
+    "video_window_s": [
+     5,
+     35
+    ]
+   },
+   "findings": {
+    "camera_status": "ok",
+    "shaking": {
+     "visible": "yes",
+     "effects": [
+      "camera image vibrates from 9.2 s video time (about 2.7 s after the predicted S, consistent with stream latency), up to about 1.5 px, decaying over about 20 s"
+     ],
+     "intensity_mmi": "",
+     "basis": "Only the image motion of the pole-mounted camera; no swaying objects or other visible effects to constrain an intensity."
+    },
+    "structural_damage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "infrastructure_damage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "landslide": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "ground_failure": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "fire": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "smoke_or_dust": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "power_outage": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "water": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "people_response": {
+     "present": "no",
+     "description": "",
+     "where": ""
+    },
+    "severity": 1,
+    "confidence": "high",
+    "summary": "Closest camera (7 km): clear shaking of the camera from about 9 s, no damage; freeway traffic keeps flowing and lights stay on.",
+    "people_boxes": []
+   },
+   "severity": 1,
+   "people_blurred": 0
+  }
+ ]
+}

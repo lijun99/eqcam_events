@@ -1,0 +1,74 @@
+{
+ "camera_id": "1004",
+ "stage": "review",
+ "reviewed_by": "claude-code",
+ "model": "claude-opus-5-5",
+ "reviewed_at": "2026-11-20T21:26:23Z",
+ "latency_s": null,
+ "usage": {},
+ "error": null,
+ "findings": {
+  "camera_status": "ok",
+  "shaking": {
+   "visible": "yes",
+   "effects": [
+    "camera image vibrates from 9.2 s video time (about 2.7 s after the predicted S, consistent with stream latency), up to about 1.5 px, decaying over about 20 s"
+   ],
+   "intensity_mmi": "",
+   "basis": "Only the image motion of the pole-mounted camera; no swaying objects or other visible effects to constrain an intensity."
+  },
+  "structural_damage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "infrastructure_damage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "landslide": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "ground_failure": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "fire": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "smoke_or_dust": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "power_outage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "water": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "people_response": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "severity": 1,
+  "confidence": "high",
+  "summary": "Closest camera (7 km): clear shaking of the camera from about 9 s, no damage; freeway traffic keeps flowing and lights stay on.",
+  "people_boxes": []
+ },
+ "video_window_s": [
+  5,
+  35
+ ]
+}

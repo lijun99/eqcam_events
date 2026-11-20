@@ -1,0 +1,81 @@
+{
+ "camera_id": "0009",
+ "stage": "review",
+ "reviewed_by": "claude-code",
+ "model": "claude-opus-5-5",
+ "reviewed_at": "2026-11-20T22:09:24Z",
+ "latency_s": null,
+ "usage": {},
+ "error": null,
+ "findings": {
+  "camera_status": "ok",
+  "shaking": {
+   "visible": "yes",
+   "effects": [
+    "the zoomed camera on parked aircraft jitters up to about 6 px from 7 s to 25 s video time (all in one view, until the stream switches views at 25.5 s)"
+   ],
+   "intensity_mmi": "",
+   "basis": "Only the image motion of the camera; no swaying objects, falling objects or people to constrain an intensity."
+  },
+  "structural_damage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "infrastructure_damage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "landslide": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "ground_failure": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "fire": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "smoke_or_dust": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "power_outage": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "water": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "people_response": {
+   "present": "no",
+   "description": "",
+   "where": ""
+  },
+  "severity": 1,
+  "confidence": "high",
+  "summary": "LAX (22 km): the camera clearly shakes for about 18 s in its view of parked aircraft; the stream tours several views every ~20 s; airport lights and operations look normal.",
+  "people_boxes": [
+   {
+    "x_min": 529,
+    "y_min": 44,
+    "x_max": 648,
+    "y_max": 144
+   }
+  ]
+ },
+ "video_window_s": [
+  6,
+  26
+ ]
+}

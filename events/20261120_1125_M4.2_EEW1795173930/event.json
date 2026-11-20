@@ -1,0 +1,10 @@
+{
+ "event_id": "20261120_1125_M4.2_EEW1795173930",
+ "usgs_id": "ci41364111",
+ "origin_utc": "2026-11-20T11:25:35.140Z",
+ "lat": 34.0063,
+ "lon": -118.1665,
+ "depth_km": 15.45,
+ "magnitude": 4.2,
+ "place": "East Los Angeles area, CA (EEW M4.2, last update M4.0)"
+}
