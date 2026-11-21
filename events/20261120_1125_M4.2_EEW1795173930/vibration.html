@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20261120_1125_M4.2_EEW1795173930 - East Los Angeles area, CA (EEW M4.2, last update M4.0): vibration</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>html,body,#map{height:100%;margin:0} .box{background:#fff;padding:6px 8px;font:12px sans-serif;color:#0b0b0b}
+.box span{display:inline-block;width:10px;height:10px;border-radius:5px;margin-right:6px}
+.leaflet-popup-content{font:12px/1.45 sans-serif} .leaflet-popup-content img{max-width:100%;height:auto}
+@media (max-width:600px){.box,.leaflet-popup-content{font-size:14px} .box img{width:150px}}</style>
+</head><body><div id="map"></div><script>
+const points = [{"lat": 34.043, "lon": -118.246, "color": "#eb6834", "label": "0003", "popup": "<b>0003</b> SkidRow_Cam2_Weingart, 8.4 km<br>Camera: 1.38 Hz (55 % of the power near it), peak 0.17 px, roll 0.019 mrad rms<br>Resonant mount, rings 16.9 s, damping 0.4 %<br>0 objects vibrating on their own<br><a href=\"cameras/0003/vibration.png\" target=\"_blank\"><img src=\"cameras/0003/vibration.png\" width=\"460\"></a>"}, {"lat": 34.1016, "lon": -118.3387, "color": "#8a8f98", "label": "0006", "popup": "<b>0006</b> Hollywood_Blvd_LATimes, 19.1 km<br><i>not analyzed (no shaking detected, or no video)</i>"}, {"lat": 33.95, "lon": -118.4, "color": "#eb6834", "label": "0009", "popup": "<b>0009</b> LAX_Runways_24, 22.4 km<br>Camera: 7.75 Hz (96 % of the power near it), peak 4.829 px, roll 1.073 mrad rms<br>Resonant mount, rings 4.3 s, damping 0.5 %<br>0 objects vibrating on their own<br><a href=\"cameras/0009/vibration.png\" target=\"_blank\"><img src=\"cameras/0009/vibration.png\" width=\"460\"></a>"}, {"lat": 34.224, "lon": -118.057, "color": "#2a78d6", "label": "0012", "popup": "<b>0012</b> Mount_Wilson, 26.2 km<br>Camera: 1.0 Hz (21 % of the power near it), peak 3.196 px, roll 1.203 mrad rms<br>No mount resonance, rings 2.8 s, damping 0.7 %<br>0 objects vibrating on their own<br><a href=\"cameras/0012/vibration.png\" target=\"_blank\"><img src=\"cameras/0012/vibration.png\" width=\"460\"></a>"}, {"lat": 33.987, "lon": -118.473, "color": "#eb6834", "label": "0019", "popup": "<b>0019</b> Venice_Vive_Boardwalk, 28.3 km<br>Camera: 9.5 Hz (72 % of the power near it), peak 0.163 px, roll 0.038 mrad rms<br>Resonant mount, rings 1.2 s, damping 1.4 %<br>0 objects vibrating on their own<br><a href=\"cameras/0019/vibration.png\" target=\"_blank\"><img src=\"cameras/0019/vibration.png\" width=\"460\"></a>"}, {"lat": 34.0689, "lon": -118.151, "color": "#eb6834", "label": "1004", "popup": "<b>1004</b> Caltrans_D7_I10_Fremont_Ave, 7.1 km<br>Camera: 5.0 Hz (86 % of the power near it), peak 1.201 px, roll 0.308 mrad rms<br>Resonant mount, rings 8.7 s, damping 0.4 %<br>0 objects vibrating on their own<br><a href=\"cameras/1004/vibration.png\" target=\"_blank\"><img src=\"cameras/1004/vibration.png\" width=\"460\"></a>"}];
+const epi = [34.0063, -118.1665];
+const map = L.map('map');
+// basemaps that serve a page opened as a local file (OpenStreetMap's own tile servers block it):
+// The National Map (USGS, public domain, United States only) and CARTO (worldwide, OpenStreetMap data)
+const usgs = 'https://basemap.nationalmap.gov/arcgis/rest/services/';
+const nationalMap = 'Basemap: <a href="https://www.usgs.gov/programs/national-geospatial-program/national-map">USGS The National Map</a>';
+const bases = {
+  'USGS Topo': L.tileLayer(usgs + 'USGSTopo/MapServer/tile/{z}/{y}/{x}', {maxZoom: 16, attribution: nationalMap}),
+  'USGS Imagery': L.tileLayer(usgs + 'USGSImageryTopo/MapServer/tile/{z}/{y}/{x}', {maxZoom: 16, attribution: nationalMap}),
+  'CARTO Light (worldwide)': L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+    {maxZoom: 19, subdomains: 'abcd',
+     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'}),
+};
+L.control.layers(bases, null, {position: 'topright'}).addTo(map);
+const bounds = [];
+for (const p of points) {
+  L.circleMarker([p.lat, p.lon], {radius: 8, color: '#222', weight: 1, fillColor: p.color, fillOpacity: 0.9})
+    .bindPopup(p.popup, {maxWidth: Math.min(480, window.innerWidth - 60)}).bindTooltip(p.label).addTo(map);
+  bounds.push([p.lat, p.lon]);
+}
+if (epi) { L.marker(epi).bindPopup("20261120_1125_M4.2_EEW1795173930 - East Los Angeles area, CA (EEW M4.2, last update M4.0): vibration").addTo(map); bounds.push(epi); }
+if (bounds.length > 1) map.fitBounds(bounds, {padding: [40, 40]}); else map.setView(bounds[0] || [34, -118], 10);
+// The National Map where it has coverage (the conterminous US, Alaska, Hawaii, Puerto Rico), CARTO elsewhere
+const c = map.getCenter();
+const inUS = (c.lat > 24 && c.lat < 50 && c.lng > -125 && c.lng < -66) || (c.lat > 51 && c.lat < 72 && c.lng < -129)
+  || (c.lat > 18 && c.lat < 23 && c.lng > -161 && c.lng < -154) || (c.lat > 17.5 && c.lat < 18.6 && c.lng > -68 && c.lng < -65);
+bases[inUS ? 'USGS Topo' : 'CARTO Light (worldwide)'].addTo(map);
+const legend = L.control({position: 'bottomright'});
+legend.onAdd = () => { const d = L.DomUtil.create('div', 'box'); d.innerHTML = "<div><span style=\"background:#eb6834\"></span>resonant mount</div><div><span style=\"background:#2a78d6\"></span>no mount resonance</div><div><span style=\"background:#8a8f98\"></span>not analyzed</div>"; return d; };
+legend.addTo(map);
+const info = L.control({position: 'topleft'});
+info.onAdd = () => { const d = L.DomUtil.create('div', 'box');
+  d.innerHTML = '<b>Vibration</b> (for scientific use)<br><a href="vibration_summary.png" target="_blank">' +
+    '<img src="vibration_summary.png" width="300"></a><br><a href="map.html">the survey map</a>'; return d; };
+info.addTo(map);
+</script><style>#eqcam-notice{position:fixed;left:8px;bottom:24px;z-index:1000;max-width:340px;background:rgba(255,255,255,.93);color:#222;padding:5px 8px;border-radius:4px;font:11px/1.4 sans-serif;box-shadow:0 1px 3px rgba(0,0,0,.3)}@media (max-width:600px){#eqcam-notice{left:0;right:0;bottom:0;max-width:none;border-radius:0;font-size:12px}.leaflet-bottom{margin-bottom:58px}}</style><div id="eqcam-notice">Research prototype: automated, unverified findings; not an official product and not for emergency decisions. Camera images belong to their owners; people are blurred. <a href="../../about.html">About, sources and removal requests</a></div></body></html>

@@ -22,12 +22,16 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EVENTS = os.path.join(ROOT, 'events')
-TOP_FILES = ('map.html', 'map.png', 'survey.csv', 'survey.json', 'event.json', 'metrics.json', 'tasks.json')
-CAMERA_FILES = ('tile.jpg', 'motion.png')
+TOP_FILES = ('map.html', 'map.png', 'survey.csv', 'survey.json', 'event.json', 'metrics.json', 'tasks.json',
+             'vibration.html', 'vibration_summary.png')         # the vibration ones if eqcam report --vibration
+CAMERA_FILES = ('tile.jpg', 'motion.png', 'vibration.png', 'vibration.json')
 INPUT_FILES = ('videos.csv',)
-NOTICE = ('<div id="eqcam-notice" style="position:fixed;left:8px;bottom:24px;z-index:1000;max-width:340px;'
+NOTICE = ('<style>#eqcam-notice{position:fixed;left:8px;bottom:24px;z-index:1000;max-width:340px;'
           'background:rgba(255,255,255,.93);color:#222;padding:5px 8px;border-radius:4px;font:11px/1.4 sans-serif;'
-          'box-shadow:0 1px 3px rgba(0,0,0,.3)">Research prototype: automated, unverified findings; not an official '
+          'box-shadow:0 1px 3px rgba(0,0,0,.3)}'
+          '@media (max-width:600px){#eqcam-notice{left:0;right:0;bottom:0;max-width:none;border-radius:0;'
+          'font-size:12px}.leaflet-bottom{margin-bottom:58px}}</style>'       # phones: a bar, the controls above it
+          '<div id="eqcam-notice">Research prototype: automated, unverified findings; not an official '
           'product and not for emergency decisions. Camera images belong to their owners; people are blurred. '
           '<a href="../../about.html">About, sources and removal requests</a></div>')
 SEVERITY = {0: ('nothing notable', '#8a8f98'), 1: ('shaking effects only', '#e3b505'),
@@ -86,7 +90,8 @@ def add_event(run, inputs=None, force=False):
             if os.path.exists(src):
                 os.makedirs(os.path.join(dest, 'cameras', cid), exist_ok=True)
                 shutil.copy2(src, os.path.join(dest, 'cameras', cid, name))
-    add_notice(os.path.join(dest, 'map.html'))
+    for page in ('map.html', 'vibration.html'):
+        add_notice(os.path.join(dest, page))
     check_no_local_paths(dest)
     print(f'added {eid} -> {os.path.relpath(dest, ROOT)}')
     return eid

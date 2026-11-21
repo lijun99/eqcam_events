@@ -1,0 +1,28 @@
+{
+ "window_s": [
+  4.0,
+  30.73
+ ],
+ "fps": 15.0,
+ "px_scale": 1.2,
+ "camera": {
+  "frequency_hz": 5.0,
+  "concentration": 0.86,
+  "peak_px": 1.201,
+  "rms_px": 0.181,
+  "roll_rms_mrad": 0.308,
+  "scale_rms_ppm": 307.0
+ },
+ "mount": {
+  "frequency_hz": 5.0,
+  "concentration": 0.9,
+  "ring_s": 8.7,
+  "damping": 0.004,
+  "ringing_to_end": true,
+  "resonant": true
+ },
+ "patches_used": 44,
+ "overlays": 11,
+ "set_aside": 31,
+ "objects": []
+}
