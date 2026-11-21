@@ -26,14 +26,23 @@ TOP_FILES = ('map.html', 'map.png', 'survey.csv', 'survey.json', 'event.json', '
              'vibration.html', 'vibration_summary.png')         # the vibration ones if eqcam report --vibration
 CAMERA_FILES = ('tile.jpg', 'motion.png', 'vibration.png', 'vibration.json')
 INPUT_FILES = ('videos.csv',)
-NOTICE = ('<style>#eqcam-notice{position:fixed;left:8px;bottom:24px;z-index:1000;max-width:340px;'
-          'background:rgba(255,255,255,.93);color:#222;padding:5px 8px;border-radius:4px;font:11px/1.4 sans-serif;'
+# the notice on the maps: a header that folds it (folded at first on phones, narrow or touch screens, so that it
+# does not hide the map) and the text
+NOTICE = ('<style>#eqcam-notice{position:fixed;left:8px;bottom:24px;z-index:1000;'
+          'max-width:min(340px,calc(100vw - 32px));background:rgba(255,255,255,.93);color:#222;padding:5px 8px;border-radius:4px;font:12px/1.4 sans-serif;'
           'box-shadow:0 1px 3px rgba(0,0,0,.3)}'
-          '@media (max-width:600px){#eqcam-notice{left:0;right:0;bottom:0;max-width:none;border-radius:0;'
-          'font-size:12px}.leaflet-bottom{margin-bottom:58px}}</style>'       # phones: a bar, the controls above it
-          '<div id="eqcam-notice">Research prototype: automated, unverified findings; not an official '
-          'product and not for emergency decisions. Camera images belong to their owners; people are blurred. '
-          '<a href="../../about.html">About, sources and removal requests</a></div>')
+          '#eqcam-notice .nh{cursor:pointer;font-weight:bold;user-select:none}'
+          '#eqcam-notice .nh::after{content:" \\25BE"}#eqcam-notice.closed .nh::after{content:" \\25B8"}'
+          '#eqcam-notice.closed .nb{display:none}body.popup-open #eqcam-notice{display:none}'
+          '@media (max-width:768px){#eqcam-notice{font-size:14px;bottom:8px}}</style>'
+          '<div id="eqcam-notice"><div class="nh">&#9432; Research prototype</div><div class="nb">Automated, '
+          'unverified findings; not an official product and not for emergency decisions. Camera images belong '
+          'to their owners; people are blurred. <a href="../../about.html">About, sources and removal '
+          'requests</a></div></div>'
+          '<script>(function () { const n = document.getElementById("eqcam-notice");'
+          ' n.querySelector(".nh").addEventListener("click", () => n.classList.toggle("closed"));'
+          ' if (window.matchMedia("(max-width: 768px), (pointer: coarse)").matches) n.classList.add("closed"); })();'
+          '</script>')
 SEVERITY = {0: ('nothing notable', '#8a8f98'), 1: ('shaking effects only', '#e3b505'),
             2: ('possible damage, fire or ground failure', '#f08a24'),
             3: ('clear damage, fire or ground failure', '#d62728'), None: ('not reviewed', '#4a6fa5')}
