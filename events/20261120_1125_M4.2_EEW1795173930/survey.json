@@ -16,7 +16,9 @@
    "lat": 34.043,
    "lon": -118.246,
    "view": "street in Skid Row, downtown LA",
-   "flags": [],
+   "flags": [
+    "resonant_mount"
+   ],
    "distance_km": 8.4,
    "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/0003_YouTube_SkidRow_Cam2_Weingart_2.4min_1080p_20261120_112535.mp4",
    "video": "0003_YouTube_SkidRow_Cam2_Weingart_2.4min_1080p_20261120_112535.mp4",
@@ -35,6 +37,14 @@
    "peak_image_velocity_px_s": 1.2,
    "permanent_shift_px": 0.0,
    "calm_frames_before": true,
+   "mount": {
+    "frequency_hz": 2.5,
+    "concentration": 0.36,
+    "ring_s": 16.9,
+    "damping": 0.004,
+    "ringing_to_end": true,
+    "resonant": true
+   },
    "changed_fraction_after": 0.0045,
    "changed_fraction_latest": 0.0043,
    "frames": {
@@ -84,9 +94,10 @@
    },
    "motion_plot": "cameras/0003/motion.png",
    "priority": "low",
-   "motion_text": "Shaking (the whole image jittering within one view) from 6.93 s to 11.6 s in the video (4.67 s), peak at 10.07 s; image shake about 0.2 px, peak image velocity 1.2 px/s, permanent shift 0.0 px. Image changed between BEFORE and AFTER: 0.4 % of the area. Image changed between BEFORE and LATEST: 0.4 % of the area.",
+   "motion_text": "Shaking (the whole image jittering within one view) from 6.93 s to 11.6 s in the video (4.67 s), peak at 10.07 s; image shake about 0.2 px, peak image velocity 1.2 px/s, permanent shift 0.0 px. The camera's mount resonates: dominant 2.5 Hz (36 % of the motion near it), ringing 16.9 s or more, damping about 0.4 %. The image motion shows the mount (pole, mast or building) more than the ground shaking; do not take its size as the intensity. Image changed between BEFORE and AFTER: 0.4 % of the area. Image changed between BEFORE and LATEST: 0.4 % of the area. Flags: resonant_mount.",
    "motion_items": [
-    "Shaking 6.9-11.6 s (5 s), up to 0.2 px"
+    "Shaking 6.9-11.6 s (5 s), up to 0.2 px",
+    "Mount resonance: 2.5 Hz, rings 16.9+ s (motion overstates the shaking)"
    ],
    "record": {
     "camera_id": "0003",
@@ -952,6 +963,7 @@
     "view_changes (7)",
     "no_calm_frames_before_the_shaking",
     "shaking_until_a_view_change",
+    "resonant_mount",
     "latest_in_another_view",
     "scene_changed"
    ],
@@ -1003,6 +1015,14 @@
    "peak_image_velocity_px_s": 58.8,
    "permanent_shift_px": 0.1,
    "calm_frames_before": false,
+   "mount": {
+    "frequency_hz": 7.75,
+    "concentration": 0.94,
+    "ring_s": 4.3,
+    "damping": 0.005,
+    "ringing_to_end": true,
+    "resonant": true
+   },
    "changed_fraction_after": 0.0418,
    "frames": {
     "before": {
@@ -1051,9 +1071,10 @@
    },
    "motion_plot": "cameras/0009/motion.png",
    "priority": "high",
-   "motion_text": "The view changes 7 times (the camera pans, zooms or switches views; this is not shaking): 5.5-6.8 s, 25.5-26.9 s, 45.6-46.9 s, 65.7-67.1 s, 85.7-87.0 s, 105.7-107.0 s, 125.8-127.1 s. Shaking (the whole image jittering within one view) from 7.0 s to 25.4 s in the video (18.4 s), peak at 14.2 s; image shake about 6.0 px, peak image velocity 58.8 px/s, permanent shift 0.1 px. Image changed between BEFORE and AFTER: 4.2 % of the area. LATEST shows another view than BEFORE: do not compare them for changes. Flags: no_calm_frames_before_the_shaking, shaking_until_a_view_change, latest_in_another_view, scene_changed.",
+   "motion_text": "The view changes 7 times (the camera pans, zooms or switches views; this is not shaking): 5.5-6.8 s, 25.5-26.9 s, 45.6-46.9 s, 65.7-67.1 s, 85.7-87.0 s, 105.7-107.0 s, 125.8-127.1 s. Shaking (the whole image jittering within one view) from 7.0 s to 25.4 s in the video (18.4 s), peak at 14.2 s; image shake about 6.0 px, peak image velocity 58.8 px/s, permanent shift 0.1 px. The camera's mount resonates: dominant 7.75 Hz (94 % of the motion near it), ringing 4.3 s or more, damping about 0.5 %. The image motion shows the mount (pole, mast or building) more than the ground shaking; do not take its size as the intensity. Image changed between BEFORE and AFTER: 4.2 % of the area. LATEST shows another view than BEFORE: do not compare them for changes. Flags: no_calm_frames_before_the_shaking, shaking_until_a_view_change, resonant_mount, latest_in_another_view, scene_changed.",
    "motion_items": [
     "Shaking 7.0-25.4 s (18 s), up to 6 px",
+    "Mount resonance: 7.75 Hz, rings 4.3+ s (motion overstates the shaking)",
     "Shaking lasts until the view changes",
     "Camera pans or switches views 7 times (not shaking)",
     "Scene changed: 4 % of the image",
@@ -1235,6 +1256,14 @@
    "peak_image_velocity_px_s": 19.0,
    "permanent_shift_px": 0.2,
    "calm_frames_before": true,
+   "mount": {
+    "frequency_hz": 8.38,
+    "concentration": 0.21,
+    "ring_s": 2.8,
+    "damping": 0.007,
+    "ringing_to_end": false,
+    "resonant": false
+   },
    "changed_fraction_after": 0.0,
    "changed_fraction_latest": 0.0001,
    "frames": {
@@ -1284,9 +1313,10 @@
    },
    "motion_plot": "cameras/0012/motion.png",
    "priority": "normal",
-   "motion_text": "Shaking (the whole image jittering within one view) from 3.4 s to 19.67 s in the video (16.27 s), peak at 8.93 s; image shake about 2.3 px, peak image velocity 19.0 px/s, permanent shift 0.2 px. Image changed between BEFORE and AFTER: 0.0 % of the area. Image changed between BEFORE and LATEST: 0.0 % of the area.",
+   "motion_text": "Shaking (the whole image jittering within one view) from 3.4 s to 19.67 s in the video (16.27 s), peak at 8.93 s; image shake about 2.3 px, peak image velocity 19.0 px/s, permanent shift 0.2 px. The image motion is not a mount resonance: dominant 8.38 Hz (21 % of the motion near it), ringing 2.8 s, damping about 0.7 %; it is closer to the ground shaking, though its size still depends on the mount and the zoom. Image changed between BEFORE and AFTER: 0.0 % of the area. Image changed between BEFORE and LATEST: 0.0 % of the area.",
    "motion_items": [
-    "Shaking 3.4-19.7 s (16 s), up to 2.3 px"
+    "Shaking 3.4-19.7 s (16 s), up to 2.3 px",
+    "No mount resonance: motion closer to the ground shaking"
    ],
    "record": {
     "camera_id": "0012",
@@ -1432,7 +1462,8 @@
    "lon": -118.473,
    "view": "Venice boardwalk",
    "flags": [
-    "view_changes (5)"
+    "view_changes (5)",
+    "resonant_mount"
    ],
    "distance_km": 28.3,
    "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/0019_YouTube_Venice_Vive_Boardwalk_2.4min_1080p_20261120_112531.mp4",
@@ -1474,6 +1505,14 @@
    "peak_image_velocity_px_s": 1.8,
    "permanent_shift_px": 0.0,
    "calm_frames_before": true,
+   "mount": {
+    "frequency_hz": 9.5,
+    "concentration": 0.75,
+    "ring_s": 1.2,
+    "damping": 0.014,
+    "ringing_to_end": false,
+    "resonant": true
+   },
    "changed_fraction_after": 0.001,
    "changed_fraction_latest": 0.0,
    "frames": {
@@ -1523,9 +1562,10 @@
    },
    "motion_plot": "cameras/0019/motion.png",
    "priority": "low",
-   "motion_text": "The view changes 5 times (the camera pans, zooms or switches views; this is not shaking): 39.1-47.6 s, 54.0-56.7 s, 59.4-70.3 s, 71.2-75.8 s, 87.5-128.3 s. Shaking (the whole image jittering within one view) from 16.33 s to 24.53 s in the video (8.2 s), peak at 22.13 s; image shake about 0.3 px, peak image velocity 1.8 px/s, permanent shift 0.0 px. Image changed between BEFORE and AFTER: 0.1 % of the area. Image changed between BEFORE and LATEST: 0.0 % of the area. LATEST is the last frame in the same view as BEFORE (39.07 s).",
+   "motion_text": "The view changes 5 times (the camera pans, zooms or switches views; this is not shaking): 39.1-47.6 s, 54.0-56.7 s, 59.4-70.3 s, 71.2-75.8 s, 87.5-128.3 s. Shaking (the whole image jittering within one view) from 16.33 s to 24.53 s in the video (8.2 s), peak at 22.13 s; image shake about 0.3 px, peak image velocity 1.8 px/s, permanent shift 0.0 px. The camera's mount resonates: dominant 9.5 Hz (75 % of the motion near it), ringing 1.2 s, damping about 1.4 %. The image motion shows the mount (pole, mast or building) more than the ground shaking; do not take its size as the intensity. Image changed between BEFORE and AFTER: 0.1 % of the area. Image changed between BEFORE and LATEST: 0.0 % of the area. LATEST is the last frame in the same view as BEFORE (39.07 s). Flags: resonant_mount.",
    "motion_items": [
     "Shaking 16.3-24.5 s (8 s), up to 0.3 px",
+    "Mount resonance: 9.5 Hz, rings 1.2 s (motion overstates the shaking)",
     "Camera pans or switches views 5 times (not shaking)"
    ],
    "record": {
@@ -1672,6 +1712,7 @@
    "lon": -118.151,
    "view": "I-10 freeway at Fremont Ave",
    "flags": [
+    "resonant_mount",
     "scene_changed"
    ],
    "distance_km": 7.1,
@@ -1692,6 +1733,14 @@
    "peak_image_velocity_px_s": 4.3,
    "permanent_shift_px": 0.0,
    "calm_frames_before": true,
+   "mount": {
+    "frequency_hz": 5.0,
+    "concentration": 0.9,
+    "ring_s": 8.7,
+    "damping": 0.004,
+    "ringing_to_end": true,
+    "resonant": true
+   },
    "changed_fraction_after": 0.0453,
    "changed_fraction_latest": 0.0471,
    "frames": {
@@ -1741,9 +1790,10 @@
    },
    "motion_plot": "cameras/1004/motion.png",
    "priority": "high",
-   "motion_text": "Shaking (the whole image jittering within one view) from 9.0 s to 15.73 s in the video (6.73 s), peak at 10.0 s; image shake about 1.0 px, peak image velocity 4.3 px/s, permanent shift 0.0 px. Image changed between BEFORE and AFTER: 4.5 % of the area. Image changed between BEFORE and LATEST: 4.7 % of the area. Flags: scene_changed.",
+   "motion_text": "Shaking (the whole image jittering within one view) from 9.0 s to 15.73 s in the video (6.73 s), peak at 10.0 s; image shake about 1.0 px, peak image velocity 4.3 px/s, permanent shift 0.0 px. The camera's mount resonates: dominant 5.0 Hz (90 % of the motion near it), ringing 8.7 s or more, damping about 0.4 %. The image motion shows the mount (pole, mast or building) more than the ground shaking; do not take its size as the intensity. Image changed between BEFORE and AFTER: 4.5 % of the area. Image changed between BEFORE and LATEST: 4.7 % of the area. Flags: resonant_mount, scene_changed.",
    "motion_items": [
     "Shaking 9.0-15.7 s (7 s), up to 1 px",
+    "Mount resonance: 5 Hz, rings 8.7+ s (motion overstates the shaking)",
     "Scene changed: 5 % of the image"
    ],
    "record": {
