@@ -14,8 +14,10 @@
    "effects": [
     "weak sub-pixel jitter of the whole image (about 0.3 px) from 16 s to 24.5 s video time, while nothing in the scene moves"
    ],
-   "intensity_mmi": "",
-   "basis": "Only weak image motion; the camera tours its preset views later (pans at 39-48, 54-76 and 87-128 s), which is not shaking."
+   "intensity_mmi": "V",
+   "basis": "Palm trees, signs and benches in view, nothing visibly moves; no people: at most V.",
+   "mmi_kind": "upper bound",
+   "mmi_confidence": 40
   },
   "structural_damage": {
    "present": "no",

@@ -15,7 +15,9 @@
     "image jitter up to about 2.5 px from about 3.5 s video time, strongest around 9-10 s, decaying by about 18 s (tower-mounted camera)"
    ],
    "intensity_mmi": "",
-   "basis": "Only the image motion of a mast-mounted camera; no visible effects to constrain an intensity."
+   "basis": "A distant view of city lights at night; no effect of shaking is visible at this distance.",
+   "mmi_kind": "not constrained",
+   "mmi_confidence": 0
   },
   "structural_damage": {
    "present": "no",

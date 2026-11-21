@@ -12,8 +12,10 @@
   "shaking": {
    "visible": "no",
    "effects": [],
-   "intensity_mmi": "",
-   "basis": "No image motion above 0.1 px before the camera starts to move at 15 s; the camera then pans/zooms (operator or preset), which is not shaking."
+   "intensity_mmi": "V",
+   "basis": "A few people and parked vehicles, palm trees, signs and banners in view: nothing visibly swings or moves, no reaction: at most V.",
+   "mmi_kind": "upper bound",
+   "mmi_confidence": 40
   },
   "structural_damage": {
    "present": "no",

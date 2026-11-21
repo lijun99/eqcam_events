@@ -15,7 +15,9 @@
     "the zoomed camera on parked aircraft jitters up to about 6 px from 7 s to 25 s video time (all in one view, until the stream switches views at 25.5 s)"
    ],
    "intensity_mmi": "",
-   "basis": "Only the image motion of the camera; no swaying objects, falling objects or people to constrain an intensity."
+   "basis": "Parked aircraft and apron lights at night; nothing in view could show the effects of shaking at these levels.",
+   "mmi_kind": "not constrained",
+   "mmi_confidence": 0
   },
   "structural_damage": {
    "present": "no",

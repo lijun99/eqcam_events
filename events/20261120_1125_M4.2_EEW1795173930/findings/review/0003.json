@@ -14,8 +14,10 @@
    "effects": [
     "sub-pixel camera vibration (about 0.15 px) with a sharp onset at 7.0 s video time, decaying over about 20 s; the camera's own clock suggests about 1-2 s of stream latency, so the onset matches the predicted S arrival"
    ],
-   "intensity_mmi": "",
-   "basis": "Only the image motion; no visible swaying, falling objects or reactions."
+   "intensity_mmi": "IV",
+   "basis": "About 5-10 people outdoors on the sidewalks keep walking or sitting during and after the camera vibration; no visible reaction, nothing swinging or falling: at most IV.",
+   "mmi_kind": "upper bound",
+   "mmi_confidence": 50
   },
   "structural_damage": {
    "present": "no",

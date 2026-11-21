@@ -15,7 +15,9 @@
     "camera image vibrates from 9.2 s video time (about 2.7 s after the predicted S, consistent with stream latency), up to about 1.5 px, decaying over about 20 s"
    ],
    "intensity_mmi": "",
-   "basis": "Only the image motion of the pole-mounted camera; no swaying objects or other visible effects to constrain an intensity."
+   "basis": "Moving traffic at night; no people, hanging objects or trees close enough to show effects.",
+   "mmi_kind": "not constrained",
+   "mmi_confidence": 0
   },
   "structural_damage": {
    "present": "no",
