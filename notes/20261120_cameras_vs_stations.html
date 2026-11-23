@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cameras vs seismic stations</title>
+<style>
+:root { --bg:#fff; --fg:#1d2330; --muted:#5f6878; --line:#e3e6eb; --link:#1a5fb4; --note:#fff7e0; }
+@media (prefers-color-scheme: dark) { :root { --bg:#14171c; --fg:#e6e9ee; --muted:#9aa3b2; --line:#2a2f37; --link:#8cb4ff; --note:#2b2615; } }
+body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.6 system-ui, -apple-system, Segoe UI, sans-serif; }
+main { max-width:860px; margin:0 auto; padding:32px 16px 48px; }
+h1 { font-size:24px; margin:0 0 8px; } h2 { font-size:17px; margin:28px 0 6px; }
+a { color:var(--link); } p, li { margin:6px 0; } ul { padding-left:20px; }
+.note { background:var(--note); border:1px solid var(--line); border-radius:6px; padding:10px 14px; }
+.back, .sub { font-size:14px; color:var(--muted); }
+.wrap { overflow-x:auto; }
+table { border-collapse:collapse; width:100%; font-size:14px; }
+th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { font-size:12px; text-transform:uppercase; letter-spacing:.03em; color:var(--muted); }
+td.n { font-variant-numeric:tabular-nums; white-space:nowrap; }
+figure { margin:18px 0; } figure img { width:100%; height:auto; background:#fff; border:1px solid var(--line); border-radius:4px; }
+figcaption { font-size:14px; color:var(--muted); margin-top:4px; }
+</style></head><body><main>
+<p class="back"><a href="../index.html">&larr; Events</a></p>
+<h1>Camera motion vs seismic stations</h1>
+<p class="sub">2026-11-20 11:25:35 UTC, <a href="https://earthquake.usgs.gov/earthquakes/eventpage/ci41364111">Mw 3.94,
+1 km NW of Commerce, CA</a> (ShakeAlert first estimate M4.2). Draft note, one event, five cameras.</p>
+
+<p class="note"><b>Draft research note.</b> Does the image motion of public cameras measure the ground motion? We
+compared it with the nearest seismic stations: the S-P times, the stream delays and the P and S spectra. Automated
+analysis of one small event; not reviewed.</p>
+
+<h2>In short</h2>
+<ul>
+<li><b>The spectra are the camera mount's, not the ground's.</b> The camera S-window spectra peak at the mount's
+own frequencies, not at the station's peaks. Their shapes correlate poorly with the station spectra (log
+correlation &minus;0.6 to +0.4, even 130 m from a station). Their S/P energy ratios differ by up to 20 dB.
+Amplitudes are pixels and depend on the zoom and the mount.</li>
+<li><b>The arrival times are rough, to about 1-2 s.</b> The camera S-P times are 0.3-1 s shorter than the
+stations' (P is small, picked late, or the wrong onset is paired). Two estimates of the stream delay, from the S
+pick and from the envelope cross-correlated with the station, differ by 0.5-1.5 s. The camera motion also has
+pulses that are not in the ground motion (compression or encoder glitches, e.g., Mount Wilson at 8 and 10.5 s).</li>
+<li><b>What is usable:</b> whether a camera shook, and when to within about 1-2 s, once the stream delay is known.
+The envelope of the shaking follows the station's (peak correlation 0.75-0.94). The camera also gives the mount's
+resonance frequencies, which are useful for calibrating and screening cameras.</li>
+<li><b>Not usable as is:</b> ground-motion spectra, amplitudes and precise P and S picks.</li>
+</ul>
+
+<h2>Data</h2>
+<p>For each camera with a camera-motion pick (from
+<a href="../events/20261120_1125_M4.2_EEW1795173930/arrivals.html">the arrivals map</a>), we took the nearest
+station of the CI or NP network whose data the SCEDC or EarthScope web services return (broadband HH preferred,
+else strong-motion HN). We used its catalog P and S picks (ComCat) and its horizontal acceleration with the
+instrument response removed. The windows were the same as in eqcam: the noise before P, P to S, and 3 s from S. The
+station times were moved out to the camera's hypocentral distance with the station's apparent P and S velocities.
+Closer stations exist for three cameras (strong-motion and Community Seismic Network stations, 0.15-0.5 km away),
+but their data were not available through these services.</p>
+
+<div class="wrap"><table>
+<thead><tr><th>Camera</th><th>Station (distance)</th><th>Picks</th><th>S-P camera / station, s</th>
+<th>Stream delay: S pick / envelope, s</th><th>S peak camera / station, Hz</th><th>Mount, Hz</th><th>Shape corr.</th></tr></thead>
+<tbody>
+<tr><td>Mount Wilson</td><td>CI.MWC (0.13 km)</td><td>P and S</td><td class="n">3.37 / 4.00</td><td class="n">1.20 / 1.68</td><td class="n">1.3 / 5.8</td><td class="n">8.4</td><td class="n">&minus;0.41</td></tr>
+<tr><td>Caltrans I-10, Fremont Ave</td><td>CI.GVR (3.6 km)</td><td>P and S</td><td class="n">2.60 / 2.93</td><td class="n">1.69 / 3.26</td><td class="n">5.0 / 2.7</td><td class="n">5.0</td><td class="n">0.05</td></tr>
+<tr><td>Venice boardwalk</td><td>CI.PDR (4.3 km)</td><td>P and S</td><td class="n">3.97 / 4.60</td><td class="n">5.90 / 4.46</td><td class="n">9.5 / 8.2</td><td class="n">9.5</td><td class="n">0.22</td></tr>
+<tr><td>Skid Row</td><td>CI.USC (4.6 km)</td><td>S only</td><td class="n">&ndash; / 2.69</td><td class="n">1.11 / 2.38</td><td class="n">1.3 / 10.6</td><td class="n">2.5</td><td class="n">&minus;0.59</td></tr>
+<tr><td>LAX runways</td><td>NP.5499 (2.1 km)</td><td>ambiguous</td><td class="n">2.93 / 3.84</td><td class="n">2.03 / 2.68</td><td class="n">7.7 / 11.3</td><td class="n">7.7</td><td class="n">0.43</td></tr>
+</tbody></table></div>
+<p class="sub">The station S-P is at the camera's distance. The stream delay is the time by which the video lags
+the ground motion: from the camera's S pick against the station's S moved out, or from the peak of the
+cross-correlation of the two log envelopes. The S peak is the maximum of the S-window spectrum within the camera's
+band; the mount is the frequency eqcam measured in the shaking. The shape correlation is that of the log spectra of
+the S window.</p>
+
+<figure><img src="20261120_cameras_vs_stations/waveforms.png" alt="Camera motion and station acceleration envelopes for five cameras">
+<figcaption><b>Figure 1.</b> Station horizontal acceleration (gray, up) and camera motion (blue, down), each
+normalized. The station is moved out to the camera, and the camera is shifted by the stream delay from its S pick.
+Solid lines: station P and S; dashed: camera picks. After S, the shaking envelopes agree. Before S, the camera shows
+glitches (Caltrans at 1 s, Mount Wilson at 8 and 10.5 s) and a weak or late P. LAX rings at its mount (7.7 Hz).</figcaption></figure>
+
+<figure><img src="20261120_cameras_vs_stations/timing.png" alt="S-P and stream delays, camera vs station">
+<figcaption><b>Figure 2.</b> Left: the camera S-P falls below the 1:1 line at every camera. Right: the two
+stream-delay estimates scatter by 0.5-1.5 s about the 1:1 line. The stream delay (0-7 s here) has to be known
+independently, for instance from a clock burned into the video, before camera times can be compared with seismic
+data.</figcaption></figure>
+
+<figure><img src="20261120_cameras_vs_stations/spectra.png" alt="S-window spectra and camera/station ratios">
+<figcaption><b>Figure 3.</b> Top: S-window spectra, station acceleration (gray) and camera motion (blue), each
+normalized. Bottom: their ratio, the camera's response to the ground, which peaks at the mount (dotted). At Mount
+Wilson the ratio rises steeply below 2 Hz, a mode near 1 Hz (the tower or the camera housing) that eqcam's 8.4 Hz
+does not capture. At Caltrans it peaks at the 5 Hz the pole showed in ambient clips. Above the camera's Nyquist
+(dash-dot) it sees nothing.</figcaption></figure>
+
+<h2>Why</h2>
+<p>A camera on a pole, a mast or a building is an oscillator driven by the ground. Below its resonance, its image
+motion follows the ground acceleration; at the resonance it is amplified many times; above it, it falls off. The
+image also mixes the camera's tilt with its zoom, the video codec adds glitches, and the frame rate (15-30 fps) caps
+the band at 7.5-15 Hz. A small event like this one gives weak P motion, close to the codec's noise.</p>
+
+<h2>What it would take</h2>
+<ul>
+<li>A seismometer at a few cameras, on or near the mount. The camera/ground ratio then gives each mount's response,
+which could be removed, at least below its resonance.</li>
+<li>Stream delays from a clock in the video, or from regular tests, rather than from the picks.</li>
+<li>Larger events and more cameras, to tell what is systematic from what is specific to this event.</li>
+</ul>
+
+<h2>Changes made in eqcam after this comparison</h2>
+<ul>
+<li>The predicted arrivals use Vp 5.7 and Vs 3.1 km/s (Vp/Vs about 1.8, the stations' apparent velocities here)
+instead of 6.0 and 3.5.</li>
+<li>The P-S pair may be up to 25 % shorter than expected (P picked late). The stream delay is taken from S, and
+how late P was picked is reported.</li>
+<li>The spectra are labeled as the camera mount's response, and the picks as uncertain by about 1 s or more.</li>
+</ul>
+
+<p class="sub">Station data: Southern California Earthquake Data Center (SCEDC), EarthScope; picks and location:
+USGS ComCat (ci41364111). Camera motion: eqcam, from public camera streams.
+<a href="../about.html">About, sources and removal requests</a></p>
+</main></body></html>

@@ -20,18 +20,19 @@
    "ringing_to_end": true,
    "resonant": true
   },
-  "predicted_p_s": 2.8,
-  "predicted_s_s": 4.9,
+  "predicted_p_s": 2.99,
+  "predicted_s_s": 5.57,
   "picks": {
    "hypo_km": 17.6,
-   "sp_expected_s": 2.09,
+   "sp_expected_s": 2.59,
    "quality": "S only",
    "s_s": 6.83,
    "p_s": null,
    "p_snr": null,
    "s_rise": 6.56,
-   "delay_s_s": 1.93,
+   "delay_s_s": 1.26,
    "delay_p_s": null,
+   "p_late_s": null,
    "notes": []
   },
   "files": [
@@ -60,18 +61,19 @@
    "ringing_to_end": true,
    "resonant": true
   },
-  "predicted_p_s": 4.5,
-  "predicted_s_s": 7.7,
+  "predicted_p_s": 4.74,
+  "predicted_s_s": 8.75,
   "picks": {
    "hypo_km": 27.2,
-   "sp_expected_s": 3.24,
+   "sp_expected_s": 4.0,
    "quality": "ambiguous",
    "s_s": 10.73,
    "p_s": 7.8,
-   "p_snr": 7.3,
+   "p_snr": 6.4,
    "s_rise": 1.54,
    "delay_s_s": null,
    "delay_p_s": null,
+   "p_late_s": null,
    "notes": [
     "the view starts during the shaking"
    ]
@@ -102,19 +104,22 @@
    "ringing_to_end": false,
    "resonant": false
   },
-  "predicted_p_s": 1.9,
-  "predicted_s_s": 5.5,
+  "predicted_p_s": 2.14,
+  "predicted_s_s": 6.61,
   "picks": {
    "hypo_km": 30.4,
-   "sp_expected_s": 3.62,
+   "sp_expected_s": 4.48,
    "quality": "P and S",
    "s_s": 7.07,
    "p_s": 3.7,
-   "p_snr": 237.1,
+   "p_snr": 240.4,
    "s_rise": 2.8,
-   "delay_s_s": 1.57,
-   "delay_p_s": 1.8,
-   "notes": []
+   "delay_s_s": 0.46,
+   "delay_p_s": 1.56,
+   "p_late_s": 1.1,
+   "notes": [
+    "P picked 1.1 s later than the S delay predicts (P is small at its onset, or the pair is not P and S); the delay is from S"
+   ]
   },
   "files": [
    "0012_motion.csv",
@@ -142,19 +147,22 @@
    "ringing_to_end": false,
    "resonant": true
   },
-  "predicted_p_s": 9.3,
-  "predicted_s_s": 13.1,
+  "predicted_p_s": 9.55,
+  "predicted_s_s": 14.29,
   "picks": {
    "hypo_km": 32.2,
-   "sp_expected_s": 3.84,
+   "sp_expected_s": 4.74,
    "quality": "P and S",
    "s_s": 20.03,
    "p_s": 16.06,
    "p_snr": 16.1,
    "s_rise": 4.7,
-   "delay_s_s": 6.93,
-   "delay_p_s": 6.76,
-   "notes": []
+   "delay_s_s": 5.74,
+   "delay_p_s": 6.51,
+   "p_late_s": 0.77,
+   "notes": [
+    "P picked 0.8 s later than the S delay predicts (P is small at its onset, or the pair is not P and S); the delay is from S"
+   ]
   },
   "files": [
    "0019_motion.csv",
@@ -182,18 +190,19 @@
    "ringing_to_end": true,
    "resonant": true
   },
-  "predicted_p_s": 4.5,
-  "predicted_s_s": 6.5,
+  "predicted_p_s": 4.63,
+  "predicted_s_s": 7.13,
   "picks": {
    "hypo_km": 17.0,
-   "sp_expected_s": 2.02,
+   "sp_expected_s": 2.5,
    "quality": "P and S",
    "s_s": 9.4,
-   "p_s": 7.33,
-   "p_snr": 15.2,
+   "p_s": 6.8,
+   "p_snr": 13.5,
    "s_rise": 1.33,
-   "delay_s_s": 2.9,
-   "delay_p_s": 2.83,
+   "delay_s_s": 2.27,
+   "delay_p_s": 2.17,
+   "p_late_s": -0.1,
    "notes": []
   },
   "files": [
