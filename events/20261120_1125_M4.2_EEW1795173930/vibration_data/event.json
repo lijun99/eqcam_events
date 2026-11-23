@@ -5,6 +5,9 @@
  "lat": 34.0063,
  "lon": -118.1665,
  "depth_km": 15.45,
- "magnitude": 4.2,
- "place": "East Los Angeles area, CA (EEW M4.2, last update M4.0)"
+ "magnitude": 3.94,
+ "place": "1 km NW of Commerce, CA (East Los Angeles)",
+ "magnitude_type": "Mw",
+ "note": "ShakeAlert first estimated M4.2 (hence the event id); the reviewed magnitude is Mw 3.94.",
+ "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci41364111"
 }

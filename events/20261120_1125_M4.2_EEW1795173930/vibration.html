@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>20261120_1125_M4.2_EEW1795173930 - East Los Angeles area, CA (EEW M4.2, last update M4.0): vibration</title>
+<title>20261120_1125_M4.2_EEW1795173930 - 1 km NW of Commerce, CA (East Los Angeles): vibration</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>html,body,#map{height:100%;margin:0} .box{background:#fff;padding:6px 8px;font:12px sans-serif;color:#0b0b0b}
@@ -54,7 +54,7 @@ for (const p of points) {
     .bindPopup(p.popup, popupOptions(480)).bindTooltip(p.label).addTo(map);
   bounds.push([p.lat, p.lon]);
 }
-if (epi) { L.marker(epi).bindPopup("20261120_1125_M4.2_EEW1795173930 - East Los Angeles area, CA (EEW M4.2, last update M4.0): vibration").addTo(map); bounds.push(epi); }
+if (epi) { L.marker(epi).bindPopup("<div class=\"pop\"><b>M3.94 Mw, 1 km NW of Commerce, CA (East Los Angeles)</b><br>2026-11-20 11:25:35 UTC, depth 15.45 km<br>ShakeAlert first estimated M4.2 (hence the event id); the reviewed magnitude is Mw 3.94.<br><span style=\"color:#52514e\">20261120_1125_M4.2_EEW1795173930</span><br><a href=\"https://earthquake.usgs.gov/earthquakes/eventpage/ci41364111\" target=\"_blank\" rel=\"noopener\">Event page (latest magnitude and location)</a></div>").addTo(map); bounds.push(epi); }
 if (bounds.length > 1) map.fitBounds(bounds, {padding: [40, 40]}); else map.setView(bounds[0] || [34, -118], 10);
 // The National Map where it has coverage (the conterminous US, Alaska, Hawaii, Puerto Rico), CARTO elsewhere
 const c = map.getCenter();

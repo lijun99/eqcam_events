@@ -173,7 +173,10 @@ def build_index():
         badges = ''.join(f'<span class="b" style="--c:{SEVERITY[k][1]}" title="{e(SEVERITY[k][0])}">{v}</span>'
                          for k, v in sorted(s['counts'].items(), key=lambda kv: -1 if kv[0] is None else kv[0]))
         mag = ev.get('magnitude')
-        rows.append(f'<tr><td>{e(when)} UTC</td><td class="m">{"M" + e(str(mag)) if mag is not None else ""}</td>'
+        mag = f'M{mag:.1f}' if isinstance(mag, (int, float)) else ''
+        if mag and ev.get('url'):                          # the event page: the latest magnitude and location
+            mag = f'<a href="{e(ev["url"])}" title="event page">{mag}</a>'
+        rows.append(f'<tr><td>{e(when)} UTC</td><td class="m">{mag}</td>'
                     f'<td>{e(ev.get("place") or "")}<div class="id">{e(s["id"])}</div></td><td class="n">{s["n"]}</td>'
                     f'<td>{badges}</td><td class="l"><a href="events/{e(s["id"])}/map.html">map</a> '
                     f'<a href="events/{e(s["id"])}/survey.csv">table</a></td></tr>')
