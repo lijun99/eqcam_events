@@ -6,7 +6,9 @@
 
 <run> is the --out folder of eqcam (with event.json, survey.json, map.html, cameras/ ...), after eqcam report,
 which blurs the people in the tiles from the people_boxes of the review. Published: the map, the survey, the
-event, the metrics, the review findings, and per camera the tile (people blurred) and the motion plot. Not
+event, the metrics, the review findings, and per camera the tile (people blurred) and the motion plot; with
+eqcam report --vibration, the vibration and arrivals maps, their figures, and the data for further analysis
+(vibration_data/ and vibration_data.zip: the camera motion and spectra, no images). Not
 published: the full-resolution frames, the originals, the videos (the map links them online, from video_url) and
 motion.npz. Local paths are removed. A run whose review boxed people that were not blurred is refused.
 Standard library only.
@@ -23,8 +25,10 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EVENTS = os.path.join(ROOT, 'events')
 TOP_FILES = ('map.html', 'map.png', 'survey.csv', 'survey.json', 'event.json', 'metrics.json', 'tasks.json',
-             'vibration.html', 'vibration_summary.png')         # the vibration ones if eqcam report --vibration
-CAMERA_FILES = ('tile.jpg', 'motion.png', 'vibration.png', 'vibration.json')
+             'vibration.html', 'vibration_summary.png',          # the vibration ones if eqcam report --vibration
+             'arrivals.html', 'arrivals_summary.png', 'vibration_data.zip')
+TOP_DIRS = ('vibration_data',)                                   # the data for further analysis, copied whole
+CAMERA_FILES = ('tile.jpg', 'motion.png', 'vibration.png', 'vibration.json', 'arrivals.png')
 INPUT_FILES = ('videos.csv',)
 # the notice on the maps: a header that folds it (folded at first on phones, narrow or touch screens, so that it
 # does not hide the map) and the text
@@ -99,7 +103,10 @@ def add_event(run, inputs=None, force=False):
             if os.path.exists(src):
                 os.makedirs(os.path.join(dest, 'cameras', cid), exist_ok=True)
                 shutil.copy2(src, os.path.join(dest, 'cameras', cid, name))
-    for page in ('map.html', 'vibration.html'):
+    for name in TOP_DIRS:
+        if os.path.isdir(os.path.join(run, name)):
+            shutil.copytree(os.path.join(run, name), os.path.join(dest, name))
+    for page in ('map.html', 'vibration.html', 'arrivals.html'):
         add_notice(os.path.join(dest, page))
     check_no_local_paths(dest)
     print(f'added {eid} -> {os.path.relpath(dest, ROOT)}')

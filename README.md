@@ -28,7 +28,11 @@ events/<event_id>/
   event.json, videos.csv        the event and the cameras (videos.csv: video_url, where the videos are online)
   metrics.json, tasks.json      the motion measured by eqcam prepare
   findings/<stage>/<id>.json    the review of each camera
-  cameras/<id>/                 tile.jpg (the frames before, during and after, people blurred), motion.png
+  cameras/<id>/                 tile.jpg (the frames before, during and after, people blurred), motion.png;
+                                with --vibration, vibration.png, vibration.json, arrivals.png
+  vibration.html, arrivals.html maps of the camera vibration and of the P and S arrivals (for scientific use)
+  vibration_data/, .zip         the data for further analysis: per camera the motion and the spectra (CSV),
+                                cameras.json (locations, mounts, picks, stream delays), event.json, README.txt
 scripts/add_event.py            adds an eqcam run and rebuilds index.html
 ```
 

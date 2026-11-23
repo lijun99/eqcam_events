@@ -21,6 +21,7 @@
    ],
    "distance_km": 8.4,
    "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/0003_YouTube_SkidRow_Cam2_Weingart_2.4min_1080p_20261120_112535.mp4",
+   "start_utc": "2026-11-20T11:25:35.240Z",
    "video": "0003_YouTube_SkidRow_Cam2_Weingart_2.4min_1080p_20261120_112535.mp4",
    "width": 1920,
    "height": 1080,
@@ -971,6 +972,19 @@
      14.875,
      15.0
     ]
+   },
+   "arrivals": {
+    "hypo_km": 17.6,
+    "sp_expected_s": 2.09,
+    "quality": "S only",
+    "s_s": 6.83,
+    "p_s": null,
+    "p_snr": null,
+    "s_rise": 6.56,
+    "delay_s_s": 1.93,
+    "delay_p_s": null,
+    "notes": [],
+    "plot": "cameras/0003/arrivals.png"
    }
   },
   {
@@ -985,6 +999,7 @@
    ],
    "distance_km": 19.1,
    "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/0006_YouTube_Hollywood_Blvd_LATimes_2.3min_1080p_20261120_112533.mp4",
+   "start_utc": "2026-11-20T11:25:33.500Z",
    "video": "0006_YouTube_Hollywood_Blvd_LATimes_2.3min_1080p_20261120_112533.mp4",
    "width": 1920,
    "height": 1080,
@@ -1235,7 +1250,8 @@
    },
    "severity": 0,
    "people_blurred": 4,
-   "vibration": null
+   "vibration": null,
+   "arrivals": null
   },
   {
    "camera_id": "0009",
@@ -1253,6 +1269,7 @@
    ],
    "distance_km": 22.4,
    "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/0009_YouTube_LAX_Runways_24_2.3min_1080p_20261120_112535.mp4",
+   "start_utc": "2026-11-20T11:25:35.170Z",
    "video": "0009_YouTube_LAX_Runways_24_2.3min_1080p_20261120_112535.mp4",
    "width": 1920,
    "height": 1080,
@@ -1792,6 +1809,21 @@
      14.875,
      15.0
     ]
+   },
+   "arrivals": {
+    "hypo_km": 27.2,
+    "sp_expected_s": 3.24,
+    "quality": "ambiguous",
+    "s_s": 10.73,
+    "p_s": 7.8,
+    "p_snr": 7.3,
+    "s_rise": 1.54,
+    "delay_s_s": null,
+    "delay_p_s": null,
+    "notes": [
+     "the view starts during the shaking"
+    ],
+    "plot": "cameras/0009/arrivals.png"
    }
   },
   {
@@ -1803,6 +1835,7 @@
    "flags": [],
    "distance_km": 26.2,
    "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/0012_WetMet_Mount_Wilson_2.2min_720p_20261120_112538.mp4",
+   "start_utc": "2026-11-20T11:25:38.340Z",
    "video": "0012_WetMet_Mount_Wilson_2.2min_720p_20261120_112538.mp4",
    "width": 1280,
    "height": 720,
@@ -2295,6 +2328,19 @@
      14.875,
      15.0
     ]
+   },
+   "arrivals": {
+    "hypo_km": 30.4,
+    "sp_expected_s": 3.62,
+    "quality": "P and S",
+    "s_s": 7.07,
+    "p_s": 3.7,
+    "p_snr": 237.1,
+    "s_rise": 2.8,
+    "delay_s_s": 1.57,
+    "delay_p_s": 1.8,
+    "notes": [],
+    "plot": "cameras/0012/arrivals.png"
    }
   },
   {
@@ -2309,6 +2355,7 @@
    ],
    "distance_km": 28.3,
    "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/0019_YouTube_Venice_Vive_Boardwalk_2.4min_1080p_20261120_112531.mp4",
+   "start_utc": "2026-11-20T11:25:31.250Z",
    "video": "0019_YouTube_Venice_Vive_Boardwalk_2.4min_1080p_20261120_112531.mp4",
    "width": 1920,
    "height": 1080,
@@ -2824,6 +2871,19 @@
      14.875,
      15.0
     ]
+   },
+   "arrivals": {
+    "hypo_km": 32.2,
+    "sp_expected_s": 3.84,
+    "quality": "P and S",
+    "s_s": 20.03,
+    "p_s": 16.06,
+    "p_snr": 16.1,
+    "s_rise": 4.7,
+    "delay_s_s": 6.93,
+    "delay_p_s": 6.76,
+    "notes": [],
+    "plot": "cameras/0019/arrivals.png"
    }
   },
   {
@@ -2838,6 +2898,7 @@
    ],
    "distance_km": 7.1,
    "video_url": "https://teren.gps.caltech.edu/share/EventsVideo/20261120_1125_M4.2_EEW1795173930/1004_Caltrans_D7_I10_Fremont_Ave_2.3min_432p_20261120_112533.mp4",
+   "start_utc": "2026-11-20T11:25:33.490Z",
    "video": "1004_Caltrans_D7_I10_Fremont_Ave_2.3min_432p_20261120_112533.mp4",
    "width": 768,
    "height": 432,
@@ -3211,6 +3272,19 @@
      7.375,
      7.5
     ]
+   },
+   "arrivals": {
+    "hypo_km": 17.0,
+    "sp_expected_s": 2.02,
+    "quality": "P and S",
+    "s_s": 9.4,
+    "p_s": 7.33,
+    "p_snr": 15.2,
+    "s_rise": 1.33,
+    "delay_s_s": 2.9,
+    "delay_p_s": 2.83,
+    "notes": [],
+    "plot": "cameras/1004/arrivals.png"
    }
   }
  ]
