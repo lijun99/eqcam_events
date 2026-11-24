@@ -6,12 +6,20 @@
  "fps": 30.0,
  "px_scale": 2.0,
  "camera": {
-  "frequency_hz": 1.0,
-  "concentration": 0.21,
-  "peak_px": 3.196,
-  "rms_px": 0.362,
-  "roll_rms_mrad": 1.203,
-  "scale_rms_ppm": 1668.2
+  "frequency_hz": 8.38,
+  "concentration": 0.25,
+  "peak_px": 3.33,
+  "rms_px": 0.293,
+  "roll_rms_mrad": 0.311,
+  "scale_rms_ppm": 346.6,
+  "patches_fitted": 1.0,
+  "linearity": {
+   "skewness": 2.6,
+   "kurtosis": 25.9,
+   "kicks": 21,
+   "kicks_per_s": 1.29,
+   "impulsive": true
+  }
  },
  "mount": {
   "frequency_hz": 8.38,
