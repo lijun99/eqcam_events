@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A cable as a seismometer</title>
+<style>
+:root { --bg:#fff; --fg:#1d2330; --muted:#5f6878; --line:#e3e6eb; --link:#1a5fb4; --note:#fff7e0; --code:#f4f5f7; }
+@media (prefers-color-scheme: dark) { :root { --bg:#14171c; --fg:#e6e9ee; --muted:#9aa3b2; --line:#2a2f37; --link:#8cb4ff; --note:#2b2615; --code:#1d2128; } }
+body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.6 system-ui, -apple-system, Segoe UI, sans-serif; }
+main { max-width:860px; margin:0 auto; padding:32px 16px 48px; }
+h1 { font-size:24px; margin:0 0 8px; } h2 { font-size:18px; margin:30px 0 6px; }
+a { color:var(--link); } p, li { margin:6px 0; } ul { padding-left:22px; }
+.note { background:var(--note); border:1px solid var(--line); border-radius:6px; padding:10px 14px; }
+.back, .sub { font-size:14px; color:var(--muted); }
+.wrap { overflow-x:auto; }
+pre { background:var(--code); border:1px solid var(--line); border-radius:6px; padding:10px 12px; overflow-x:auto;
+      font:13px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+table { border-collapse:collapse; width:100%; font-size:14px; }
+th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { font-size:12px; text-transform:uppercase; letter-spacing:.03em; color:var(--muted); }
+td.n { font-variant-numeric:tabular-nums; white-space:nowrap; }
+figure { margin:18px 0; } figure img { width:100%; height:auto; background:#fff; border:1px solid var(--line); border-radius:4px; }
+figcaption { font-size:14px; color:var(--muted); margin-top:4px; }
+</style></head><body><main>
+<p class="back"><a href="../index.html">&larr; Events</a></p>
+<h1>A cable as a seismometer</h1>
+<p class="sub">2026-11-20 11:25:35 UTC, <a href="https://earthquake.usgs.gov/earthquakes/eventpage/ci41364111">Mw
+3.94, 1 km NW of Commerce, CA</a>. Camera 0003 (Skid Row, downtown Los Angeles, 8 km from the epicenter) and
+station CI.USC, 4.6 km away. Draft note, 2026-11-24; follows <a href="20261124_camera_mount_model.html">Camera
+mount model: Mount Wilson</a>.</p>
+
+<p class="note"><b>Draft research note.</b> A camera's own vibration is the ground motion filtered by an unknown
+mount. An object in the scene with a known, lightly damped mode is different: its motion relative to the camera
+does not depend on the mount, and its response to the ground follows from its physics. We test this with a cable
+across the view of the Skid Row camera. One object, one small event; not reviewed.</p>
+
+<h2>In short</h2>
+<ul>
+<li><b>The cable has a mode of its own at 1.050 Hz</b>, damped by about 0.2 % (Q &asymp; 200). It rang for about
+a minute after the shaking, at 0.08 px (0.0075 px before). At this frequency its motion is 96 times the camera's
+in power and nearly incoherent with it.</li>
+<li><b>Its other peaks, 1.38 and 2.5 Hz, are the camera's mount</b> (coherence with the camera 0.93-0.97). The
+cable is a few meters from the camera, so the sway of the mount shifts it in the image much more than the
+distant background: parallax.</li>
+<li><b>Driven by the ground motion of CI.USC, a 1.05 Hz oscillator with the same damping rings like the
+cable.</b> Its envelope peaks at 22.4 s after the origin (the late 1 Hz waves of the basin), the cable's at 21.7
+s, with a log-envelope correlation of 0.60 for the vertical component. The amplitudes match at 3.1 mm per pixel,
+which makes the 9-px-wide cable 27 mm thick: a normal power or telecom cable.</li>
+<li><b>So the cable measures the Fourier amplitude of the ground acceleration at 1.05 Hz</b>, to within a factor
+of about 2, through its physics and its distance, not through the camera's mount. The mount (2.5 Hz) barely sees
+this frequency.</li>
+</ul>
+
+<h2>The cable</h2>
+<p>A dark cable crosses the whole 1920 &times; 1080 night view at about y = 585 px. We tracked its vertical
+position in 77 columns (every 16 px, skipping the pole and the signal box in the middle) by the sub-pixel
+cross-correlation of the vertical intensity profiles (32 px across the cable) with their mean over the first 5 s,
+and subtracted the camera's motion down (eqcam's robust fit of the background). The whole video was used at full
+resolution, 30 fps, 0-60 s.</p>
+<figure><img src="20261124_cable_seismometer/cable.png" alt="The left half of the cable band of the Skid Row view, a dark horizontal cable in front of a building wall, with the tracked strip between dashed lines">
+<figcaption><b>Figure 1.</b> The cable (left half of the view) and the strip in which it was tracked.</figcaption></figure>
+
+<div class="wrap"><table>
+<thead><tr><th>Vertical image motion, rms</th><th>Before (1-6.5 s)</th><th>Shaking (6.9-12 s)</th><th>After (12-26 s)</th></tr></thead>
+<tbody>
+<tr><td>Cable, relative to the camera (median of the columns)</td><td class="n">0.007 px</td><td class="n">0.151 px</td><td class="n">0.087 px</td></tr>
+<tr><td>Camera (down)</td><td class="n">0.002 px</td><td class="n">0.044 px</td><td class="n">0.019 px</td></tr>
+</tbody></table></div>
+
+<h2>Its own mode, and the camera's</h2>
+<p>The coherence between the cable's motion and the camera's tells which of its peaks belong to it:</p>
+<div class="wrap"><table>
+<thead><tr><th>Frequency</th><th>Cable / camera power</th><th>Coherence</th><th>Whose</th></tr></thead>
+<tbody>
+<tr><td class="n">1.05 Hz</td><td class="n">96</td><td class="n">0.22</td><td>the cable's own mode</td></tr>
+<tr><td class="n">1.3-1.4 Hz</td><td class="n">5.5</td><td class="n">0.93</td><td>the camera's mount (eqcam's dominant 1.38 Hz)</td></tr>
+<tr><td class="n">2.5 Hz</td><td class="n">9.3</td><td class="n">0.97</td><td>the camera's mount (its resonance, 2.5 Hz)</td></tr>
+</tbody></table></div>
+<p>At the mount's frequencies the cable moves with the camera but more than it: the camera's rotation is removed
+with the background, but its translation u shifts a near object by f_px&middot;u/Z and the distant background by
+almost nothing. A near object of known distance could therefore measure the translation of the camera too.</p>
+<p>The cable's own mode: 1.050 Hz (with weaker peaks at 1.00 and 1.11 Hz: a sagging cable has closely spaced
+modes), moving roughly in phase across the frame (the fundamental), 0.035-0.07 px from left to right. Its
+envelope decays from 0.08 px at 12-23 s to 0.018 px at 55 s: an e-folding time of 67 s, a damping of 0.23 % of
+critical. A taut cable's fundamental is f<sub>1</sub> &asymp; 0.55/&radic;(sag in m) Hz, which puts its sag near
+0.3 m.</p>
+<figure><img src="20261124_cable_seismometer/spectra.png" alt="Left: spectra of the cable and of the camera, the cable with its own peak at 1.05 Hz and shared peaks at 1.38 and 2.5 Hz; right: the cable's vertical motion ringing for a minute while the camera's stops after the shaking">
+<figcaption><b>Figure 2.</b> Left: spectra of the cable (relative to the camera) and of the camera during the
+shaking and after. Right: their vertical motion; the camera's series ends at 26 s, where eqcam's analysis
+stops.</figcaption></figure>
+
+<h2>The cable as a seismometer</h2>
+<p>For a mode of frequency &omega; driven through its supports by the ground acceleration a(t), the relative
+displacement at mid-span after the shaking rings at</p>
+<pre>x = &Gamma; &middot; |A(&omega;)| / &omega;,     A(&omega;) = &int; a(t) e<sup>&minus;i&omega;t</sup> dt,     &Gamma; = 4/&pi; for the fundamental of a string</pre>
+<p>(undamped; with 0.2 % damping it decays slowly and integrates the input near &omega; over about a minute).
+The cable's ringing amplitude is therefore the Fourier amplitude of the ground acceleration at its frequency,
+times a known factor.</p>
+<p>The closest stations (CE.24977, 270 m away; Community Seismic Network stations within 1-2 km) are not served by
+the SCEDC or EarthScope web services; CI.USC, 4.6 km away in the same basin, is. Its Fourier amplitudes at 1.05
+Hz were 0.148 (vertical), 0.120 (north) and 0.184 (east) cm/s, giving &Gamma;|A|/&omega; = 0.29, 0.23 and 0.35 mm.
+We drove a 1.05 Hz oscillator with 0.23 % damping with each component and compared its envelope with the
+cable's:</p>
+<div class="wrap"><table>
+<thead><tr><th>CI.USC component</th><th>Envelope peak, after the origin</th><th>Log-envelope correlation</th><th>Scale that matches</th></tr></thead>
+<tbody>
+<tr><td>Vertical</td><td class="n">22.4 s (cable: 21.7 s)</td><td class="n">0.60</td><td class="n">3.1 mm/px</td></tr>
+<tr><td>East</td><td class="n">7.3 s</td><td class="n">0.46</td><td class="n">3.2 mm/px</td></tr>
+<tr><td>North</td><td class="n">8.0 s</td><td class="n">0.19</td><td class="n">2.8 mm/px</td></tr>
+</tbody></table></div>
+<figure><img src="20261124_cable_seismometer/ringing.png" alt="Envelopes against time after the origin: the cable observed, peaking near 22 s, and the oscillator driven by the CI.USC vertical component, peaking at the same time; the east-driven oscillator peaks earlier">
+<figcaption><b>Figure 3.</b> The cable's ringing (0.93-1.17 Hz envelope) and that of the 1.05 Hz mode driven by
+CI.USC, converted at 3.1 mm per pixel. The video is shifted by its stream delay from the S arrival (1.23
+s).</figcaption></figure>
+<p>The vertical component matches best, as expected for the vertical motion of a horizontal cable, and in timing
+as well as in level: the late peak at 22 s comes from 1 Hz waves that arrive after the S wave in the basin. The
+scale is a check on the physics: 3.1 mm per pixel makes the cable, 9 px wide in the image, 27 mm thick, a normal
+size for a power or telecom cable; with a focal length of 1000-1400 px, it is 3-4 m from the camera.</p>
+
+<h2>Caveats</h2>
+<ul>
+<li>The station is 4.6 km away; at 1 Hz in the basin the ground motion can differ by a factor of 2 over that
+distance. The 270 m station would make this a real test.</li>
+<li>The model is a string driven uniformly through rigid supports. A sagging cable is also driven by the motion of
+its supports along its span, its supports (poles, a building) may amplify, and it has closely spaced modes. The
+cable decays faster than the model after about 45 s: its damping is probably somewhat above 0.23 %.</li>
+<li>The distance of the cable is inferred (from the fit and an assumed diameter), not surveyed; the cable is near
+and probably out of focus, which widens it in the image.</li>
+<li>One object, one event.</li>
+</ul>
+
+<h2>What it means</h2>
+<ul>
+<li>An object in the scene with a known, lightly damped mode is a narrowband seismometer: its gain comes from its
+physics (frequency, damping, participation factor) and its distance, not from the camera's mount. Its motion is
+measured relative to the camera, so the mount cancels, except for the parallax of near objects, which coherence
+with the camera identifies.</li>
+<li>Cables, wires and hanging signs are common in street views. With their distances surveyed once, two or three
+of them at different frequencies would give the ground's spectrum at a few points; the camera's own vibration
+cannot.</li>
+<li>Next: the record of the 270 m station, other cables in the same and other views, and line tracking in eqcam
+(the objects it finds are patches, which a thin cable does not fill).</li>
+</ul>
+
+<p class="sub">Station data: Southern California Earthquake Data Center (SCEDC), CI.USC broadband; location: USGS
+ComCat (ci41364111). Camera motion: from a public camera stream. See also
+<a href="20261120_cameras_vs_stations.html">Camera motion vs seismic stations</a>.
+<a href="../about.html">About, sources and removal requests</a></p>
+</main></body></html>
