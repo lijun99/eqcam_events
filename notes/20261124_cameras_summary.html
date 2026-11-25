@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What cameras can and cannot measure</title>
+<style>
+:root { --bg:#fff; --fg:#1d2330; --muted:#5f6878; --line:#e3e6eb; --link:#1a5fb4; --note:#fff7e0; }
+@media (prefers-color-scheme: dark) { :root { --bg:#14171c; --fg:#e6e9ee; --muted:#9aa3b2; --line:#2a2f37; --link:#8cb4ff; --note:#2b2615; } }
+body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.6 system-ui, -apple-system, Segoe UI, sans-serif; }
+main { max-width:860px; margin:0 auto; padding:32px 16px 48px; }
+h1 { font-size:24px; margin:0 0 8px; } h2 { font-size:18px; margin:30px 0 6px; }
+a { color:var(--link); } p, li { margin:6px 0; } ul { padding-left:22px; }
+.note { background:var(--note); border:1px solid var(--line); border-radius:6px; padding:10px 14px; }
+.back, .sub { font-size:14px; color:var(--muted); }
+</style></head><body><main>
+<p class="back"><a href="../index.html">&larr; Events</a></p>
+<h1>What cameras can and cannot measure</h1>
+<p class="sub">Summary of three draft notes on the 2026-11-20 11:25:35 UTC
+<a href="https://earthquake.usgs.gov/earthquakes/eventpage/ci41364111">Mw 3.94 event, 1 km NW of Commerce, CA</a>:
+<a href="20261120_cameras_vs_stations.html">Camera motion vs seismic stations</a>,
+<a href="20261124_camera_mount_model.html">Camera mount model: Mount Wilson</a> and
+<a href="20261124_cable_seismometer.html">A cable as a seismometer</a>. 2026-11-24.</p>
+
+<p class="note"><b>In one sentence.</b> The image motion of public cameras is not a scientific measurement of the
+ground motion; cameras add visual evidence of damage and effects, and points to the intensity map, and some objects
+in their views carry partial information on the shaking.</p>
+
+<h2>What we did</h2>
+<ul>
+<li>Compared the image motion of five cameras with the nearest seismic stations, 0.13-4.6 km away: arrival times,
+envelopes and spectra.</li>
+<li>Modeled the camera mount physically (a pole or mast as a damped oscillator driven by the ground) to see
+whether calibrating it outside earthquakes could remove its response, and tested this at Mount Wilson, 130 m from
+station CI.MWC.</li>
+<li>Tracked two wires in the Skid Row view and compared their motion with station CI.USC, 4.6 km away.</li>
+</ul>
+
+<h2>What cameras can give</h2>
+<ul>
+<li><b>Whether a place shook, and when</b>, to about 1-2 s once the stream delay is known. The envelope of the
+camera motion follows the station's (correlation 0.75-0.94).</li>
+<li><b>Effects of the shaking</b>: damage, falling objects, landslides, fire, smoke, power outages, people's
+reactions. This is intensity evidence, including in places without stations.</li>
+<li><b>Partial information from objects in the view.</b> A cable across the Skid Row view rang at its own mode
+(1.05 Hz) and gave the ground's amplitude at that frequency to within a factor of about 2, independent of the
+camera's mount. A wire along the view followed the 6 Hz horizontal shaking over time (correlation 0.88), without an
+amplitude scale.</li>
+<li><b>Each camera's mount</b>: its resonance and whether its motion is linear, from ambient clips. This helps to
+screen cameras.</li>
+<li><b>Near a fault</b>, the surface rupture itself, as in the 2025 Myanmar video.</li>
+</ul>
+
+<h2>What they cannot give</h2>
+<ul>
+<li><b>Magnitude, hypocenter, mechanism</b>: these need seismic networks.</li>
+<li><b>Ground-motion amplitudes or spectra from the camera's own motion.</b> It is the ground filtered by an
+unknown mount, in pixels that depend on the zoom. The spectra did not match the stations' (shape correlation -0.6 to
++0.4), even 130 m from one, where the camera's motion was impulsive (probably a loose part), not a linear response.
+PGA and PGV cannot be read from it.</li>
+<li><b>Removing the mount by calibration.</b> Ambient motion gives the mount's resonances, not its gain, and near a
+resonance the correction is very sensitive to the damping.</li>
+<li><b>Precise P and S picks.</b> P is weak or picked late, and the stream delays (0-7 s) are unknown without a
+clock in the video.</li>
+<li><b>Frequencies above 7.5-15 Hz</b> (half the frame rate). Video codec glitches add false pulses.</li>
+</ul>
+
+<h2>What would change this</h2>
+<ul>
+<li>A seismometer at or near a few cameras, to measure each mount's response once.</li>
+<li>Stream clocks, or regular timing tests, for the delays.</li>
+<li>Surveyed distances of the cables and wires in the views, so that their motion can be converted to ground
+motion.</li>
+<li>Larger events and more cameras: all of this rests on one small event.</li>
+</ul>
+
+<p class="sub">Station data: Southern California Earthquake Data Center (SCEDC); location: USGS ComCat
+(ci41364111). Camera motion: eqcam, from public camera streams.
+<a href="../about.html">About, sources and removal requests</a></p>
+</main></body></html>
