@@ -30,7 +30,7 @@ mount model: Mount Wilson</a>.</p>
 <p class="note"><b>Draft research note.</b> A camera's own vibration is the ground motion filtered by an unknown
 mount. An object in the scene with a known, lightly damped mode is different: its motion relative to the camera
 does not depend on the mount, and its response to the ground follows from its physics. We test this with a cable
-across the view of the Skid Row camera. One object, one small event; not reviewed.</p>
+across the view of the Skid Row camera and a wire along it. Two objects, one small event; not reviewed.</p>
 
 <h2>In short</h2>
 <ul>
@@ -47,6 +47,10 @@ which makes the 9-px-wide cable 27 mm thick: a normal power or telecom cable.</l
 <li><b>So the cable measures the Fourier amplitude of the ground acceleration at 1.05 Hz</b>, to within a factor
 of about 2, through its physics and its distance, not through the camera's mount. The mount (2.5 Hz) barely sees
 this frequency.</li>
+<li><b>A second wire, running along the view, records the shape of the 6 Hz horizontal shaking.</b> Its sideways
+motion at 5.5-6.3 Hz rose 33 times above its level before the event and does not ring: its envelope follows that of
+CI.USC's horizontal acceleration in the same band (log-envelope correlation 0.88, peaks at 7.3 and 7.8 s after the
+origin) down to its noise at about 30 s. Its amplitude is not calibrated. Below 1 Hz it sways in the wind.</li>
 </ul>
 
 <h2>The cable</h2>
@@ -115,6 +119,53 @@ as well as in level: the late peak at 22 s comes from 1 Hz waves that arrive aft
 scale is a check on the physics: 3.1 mm per pixel makes the cable, 9 px wide in the image, 27 mm thick, a normal
 size for a power or telecom cable; with a focal length of 1000-1400 px, it is 3-4 m from the camera.</p>
 
+<h2>A second wire, along the view</h2>
+<p>A bright, twisted service drop hangs from the top of the frame, close to the camera, down to a pole farther away
+(Figure 4, left). It runs nearly along the line of sight, so its sag is foreshortened and the camera sees its
+sideways sway. We tracked its horizontal position in 45 rows (every 6 px, y = 4-280; three rows below them
+tracked a street lamp and were dropped), as for the cable, and subtracted the camera's motion across.</p>
+<div class="wrap"><table>
+<thead><tr><th>Sideways image motion, rms</th><th>Before (1-6.5 s)</th><th>Shaking (6.9-12 s)</th><th>After (12-26 s)</th><th>After (26-60 s)</th></tr></thead>
+<tbody>
+<tr><td>Near part (y &lt; 120 px, 20 rows)</td><td class="n">0.074 px</td><td class="n">0.380 px</td><td class="n">0.230 px</td><td class="n">0.154 px</td></tr>
+<tr><td>Far part (y &gt; 180 px, 15 rows)</td><td class="n">0.058 px</td><td class="n">0.246 px</td><td class="n">0.150 px</td><td class="n">0.111 px</td></tr>
+</tbody></table></div>
+<p>Unlike the cable, this wire was already moving before the event: the wind swayed it at 0.46-0.62 Hz. Its
+motion splits into three bands (envelopes of the mean of the rows):</p>
+<div class="wrap"><table>
+<thead><tr><th>Band</th><th>Before</th><th>Maximum (after the origin)</th><th>12-25 s</th><th>40-55 s</th><th>What it is</th></tr></thead>
+<tbody>
+<tr><td class="n">0.45-0.7 Hz</td><td class="n">0.091 px</td><td class="n">0.22 px at 7.9 s</td><td class="n">0.084 px</td><td class="n">0.081 px</td><td>wind sway: a gust rising from before the shaking, and as large (0.25 px) at 55 s</td></tr>
+<tr><td class="n">1.0-1.4 Hz</td><td class="n">0.027 px</td><td class="n">0.24 px at 9.0 s</td><td class="n">0.12 px</td><td class="n">0.065 px</td><td>its own modes (1.11, 1.29 and 1.35 Hz after the shaking), excited and ringing, also kept up by the wind</td></tr>
+<tr><td class="n">5.5-6.3 Hz</td><td class="n">0.004 px</td><td class="n">0.14 px at 7.3 s</td><td class="n">0.029 px</td><td class="n">0.008 px</td><td>forced by the shaking, without ringing</td></tr>
+</tbody></table></div>
+<figure><img src="20261124_cable_seismometer/drop.png" alt="Left: the bright twisted wire running from the top of the frame down toward a pole, with the tracked rows marked; right: envelopes of its sideways motion in three bands against time, the wind band high before and after the shaking, the 1.0-1.4 Hz band rising with the shaking and staying high, the 5.5-6.3 Hz band rising 33 times during the shaking and falling back">
+<figcaption><b>Figure 4.</b> Left: the wire along the view (crop of the first frame, full-frame pixels) and the
+45 tracked rows. Right: the envelopes of its sideways motion, relative to the camera, in three
+bands.</figcaption></figure>
+<p>At the frequencies of the camera's mount the wire again moves with the camera (coherence 0.82-0.87 at 2.5 Hz,
+more at its near end): parallax, as for the cable. At 1.1-1.35 Hz and 6 Hz it does not (coherence 0.13-0.27), and
+the camera hardly moves at 6 Hz (the wire's power there is 10<sup>4</sup>-10<sup>5</sup> times the camera's).</p>
+<p>The 6 Hz envelope follows the ground. Compared with the envelopes of CI.USC's acceleration in the same band, with
+the video shifted by the same stream delay as for the cable:</p>
+<div class="wrap"><table>
+<thead><tr><th>CI.USC, 5.5-6.3 Hz</th><th>Envelope peak, after the origin</th><th>Log-envelope correlation at the stream delay</th><th>Best, with a further shift</th></tr></thead>
+<tbody>
+<tr><td>Horizontal</td><td class="n">7.8 s (wire: 7.3 s)</td><td class="n">0.88</td><td class="n">0.88 (+0.15 s)</td></tr>
+<tr><td>Vertical</td><td class="n">14.0 s</td><td class="n">0.69</td><td class="n">0.73 (&minus;2.15 s)</td></tr>
+</tbody></table></div>
+<figure><img src="20261124_cable_seismometer/drop_6hz.png" alt="Envelopes on a log scale against time after the origin: the wire's 5.5-6.3 Hz envelope and the CI.USC horizontal acceleration envelope in the same band rise together at 5 s and 7 s and decay together to about 30 s, after which the wire stays at its noise level">
+<figcaption><b>Figure 5.</b> The wire's sideways motion at 5.5-6.3 Hz and CI.USC's horizontal acceleration in the
+same band, scaled to the same peak. Both show a first rise at 5 s (P) and the main one at 7-8 s (S), and decay
+together for about 25 s; after about 30 s the wire is at its noise level (about 0.008 px).</figcaption></figure>
+<p>The horizontal component matches, as expected for the sideways motion of a wire along the view, and well
+enough to see the P wave. The cable's motion in the same band follows the station less well (0.60 for the
+horizontal, 0.53 for the vertical). Why the wire does not ring at 6 Hz, as it does at 1.1-1.35 Hz, we have not
+modeled: its high modes are closely spaced, and the damping of a twisted cable, from the friction between its
+strands, may grow with frequency; it then follows the motion of its supports instead of storing it. The stream
+delay (1.23 s) came from the camera's own S pick, so the alignment is not independent, but no further shift
+beyond 0.15 s is needed.</p>
+
 <h2>Caveats</h2>
 <ul>
 <li>The station is 4.6 km away; at 1 Hz in the basin the ground motion can differ by a factor of 2 over that
@@ -124,7 +175,10 @@ its supports along its span, its supports (poles, a building) may amplify, and i
 cable decays faster than the model after about 45 s: its damping is probably somewhat above 0.23 %.</li>
 <li>The distance of the cable is inferred (from the fit and an assumed diameter), not surveyed; the cable is near
 and probably out of focus, which widens it in the image.</li>
-<li>One object, one event.</li>
+<li>The wire along the view has no scale: its distance changes along it, and its gain at 6 Hz depends on how its
+supports (a pole, the building) shake and on its tension, none of which is known. Its low modes are driven by the
+wind as well as by the ground; in a small event they cannot be separated.</li>
+<li>Two objects, one event.</li>
 </ul>
 
 <h2>What it means</h2>
@@ -133,9 +187,16 @@ and probably out of focus, which widens it in the image.</li>
 physics (frequency, damping, participation factor) and its distance, not from the camera's mount. Its motion is
 measured relative to the camera, so the mount cancels, except for the parallax of near objects, which coherence
 with the camera identifies.</li>
+<li>A wire can also follow the shaking at high frequency, where it does not ring. The wire along the view gives
+the shape of the horizontal shaking at 6 Hz over time, above the corner frequency of an M4, but not its
+level. Calibrating it once, against a station nearby or across repeated events,
+would make it a measurement.</li>
 <li>Cables, wires and hanging signs are common in street views. With their distances surveyed once, two or three
 of them at different frequencies would give the ground's spectrum at a few points; the camera's own vibration
-cannot.</li>
+cannot. The two wires here are complementary: the cable gives the level at 1.05 Hz, the wire along the view the
+time history at 6 Hz.</li>
+<li>Wind sets the floor at low frequencies: a wire whose low modes the wind moves is usable there only in larger
+events.</li>
 <li>Next: the record of the 270 m station, other cables in the same and other views, and line tracking in eqcam
 (the objects it finds are patches, which a thin cable does not fill).</li>
 </ul>
