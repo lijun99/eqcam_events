@@ -162,6 +162,25 @@ def summary(eid):
     return dict(id=eid, event=event, n=len(cameras), counts=counts)
 
 
+def notes_list():
+    """The notes (notes/YYYYMMDD_<name>.html), newest first: the date from the file name, the title from <title>"""
+    folder = os.path.join(ROOT, 'notes')
+    items = []
+    for name in sorted(os.listdir(folder), reverse=True) if os.path.isdir(folder) else []:
+        m = re.fullmatch(r'(\d{4})(\d{2})(\d{2})_[\w.-]+\.html', name)
+        if not m:
+            continue
+        with open(os.path.join(folder, name), errors='ignore') as f:
+            t = re.search(r'<title>(.*?)</title>', f.read(8192), re.S)
+        title = html.unescape(t.group(1).strip()) if t else name[9:-5].replace('_', ' ')
+        items.append(f'<li><span class="d">{"-".join(m.groups())}</span> '
+                     f'<a href="notes/{html.escape(name)}">{html.escape(title)}</a></li>')
+    if not items:
+        return ''
+    return ('<h2>Notes</h2>\n<p>Draft research notes on what the camera videos measure, compared with seismic '
+            'stations; not reviewed.</p>\n<ul class="notes">' + ''.join(items) + '</ul>\n')
+
+
 def build_index():
     e = html.escape
     events = sorted((summary(d) for d in os.listdir(EVENTS) if os.path.exists(os.path.join(EVENTS, d, 'event.json'))),
@@ -200,6 +219,9 @@ td.m, td.n {{ font-variant-numeric:tabular-nums; white-space:nowrap; }} td.l a {
      color:#111; font-size:12px; text-align:center; }}
 .legend {{ font-size:12px; color:var(--muted); margin-top:16px; }}
 footer {{ font-size:13px; color:var(--muted); margin-top:28px; padding-top:12px; border-top:1px solid var(--line); }} .legend .b {{ min-width:10px; height:10px; padding:0; vertical-align:middle; }}
+h2 {{ font-size:18px; margin:32px 0 4px; }} ul.notes {{ list-style:none; padding:0; margin:0; }}
+ul.notes li {{ padding:6px 0; border-bottom:1px solid var(--line); }}
+ul.notes .d {{ display:inline-block; min-width:96px; color:var(--muted); font-size:13px; font-variant-numeric:tabular-nums; }}
 </style></head><body><main>
 <h1>Earthquake camera surveys</h1>
 <p>Public and traffic camera videos reviewed after earthquakes with <a href="https://github.com/lijun99/eqcam">eqcam</a>:
@@ -207,7 +229,7 @@ shaking, damage, fire, ground failure and outages seen by each camera. The findi
 <div class="wrap"><table><thead><tr><th>Origin</th><th>Mag.</th><th>Event</th><th>Cameras</th><th>Findings</th><th></th></tr></thead>
 <tbody>{body}</tbody></table></div>
 <div class="legend">{legend}</div>
-<footer><b>Research prototype.</b> The findings are automated and unverified; this is not an official earthquake
+{notes_list()}<footer><b>Research prototype.</b> The findings are automated and unverified; this is not an official earthquake
 product and must not be used for emergency or safety decisions. Camera images belong to their owners and are shown
 as a few low-resolution stills, with people blurred, for non-commercial research.
 <a href="about.html">About, sources and removal requests</a></footer>

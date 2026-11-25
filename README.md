@@ -20,7 +20,9 @@ event map. Provided as is, without warranty.
 ## Contents
 
 ```
-index.html                      the list of events (rebuilt by the script)
+index.html                      the list of events and of the notes (rebuilt by the script)
+notes/YYYYMMDD_<name>.html      draft research notes, with their figures in notes/YYYYMMDD_<name>/; listed on
+                                the index newest first, by the <title> of each
 events/<event_id>/
   map.html, map.png             the map: cameras colored by severity, filters by tag, the tile and the video
                                 links (online, at the window of the detections) in each popup
